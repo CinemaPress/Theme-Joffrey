@@ -1,0 +1,278 @@
+<div class="narrow_column_wrap">
+    <div style="margin-top: 0px;" class="narrow_column" id="narrow_column">
+        <div class="page_block page_photo">
+            <div class="page_avatar_wrap">
+                <div id="page_avatar" class="page_avatar">
+                    <img class="page_avatar_img" src="<% if (typeof movie == 'object') { %><%- movie.poster %><% } else { %>/themes/joffrey/public/images/ava.png<% } %>" alt="Ава">
+                </div>
+            </div>
+        </div>
+
+        <% var group_id = 26750264; /* ID Вашей группы ВКонтакте */ %>
+        <% if (group_id) { %>
+
+        <div class="page_block">
+            <script type="text/javascript" src="//vk.com/js/api/openapi.js?127"></script>
+            <div id="vk_groups"></div>
+            <script type="text/javascript">
+                VK.Widgets.Group("vk_groups", {mode: 3, width: "230", color1: 'FFFFFF', color2: '000000', color3: '5E81A8'}, <%- group_id %>);
+            </script>
+            <div class="module_body clear_fix" style="color: #ccc">Изменить ID группы на свою в файле /themes/joffrey/views/includes/right.ejs</div>
+        </div>
+
+        <% } %>
+
+        <% if (typeof movie == 'object') { %>
+
+        <div class="page_block">
+            <div class="module clear page_list_module _module">
+                <div class="module_header">
+                    <h3 class="header_top clear_fix">
+                        <span class="header_label fl_l">Разделы фильма</span>
+                    </h3>
+                </div>
+                <div class="module_body clear_fix">
+                    <div style="margin: auto; text-align: center;">
+
+                        <a href="<%- movie.url %>" class="flat_button" style="display: block;margin: 2px auto;">
+                            О фильме
+                        </a>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="flat_button" style="display: block;margin: 2px auto;">
+                            Онлайн
+                        </a>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="flat_button" style="display: block;margin: 2px auto;">
+                            Скачать
+                        </a>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>" class="flat_button" style="display: block;margin: 2px auto;">
+                            Трейлер
+                        </a>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.picture %>" class="flat_button" style="display: block;margin: 2px auto;">
+                            Кадры
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% } %>
+
+        <% if (typeof page == 'object' && page.sorting) { %>
+
+        <div class="page_block">
+            <div class="module clear page_list_module _module">
+                <div class="module_header">
+                    <h3 class="header_top clear_fix">
+                        <span class="header_label fl_l">Сортировка</span>
+                    </h3>
+                </div>
+                <div class="module_body clear_fix">
+                    <div style="margin: auto; text-align: center;">
+
+                        <% page.sorting.forEach(function (sort) { %>
+
+                        <% if (sort.active) { %>
+
+                        <a href="<%- sort.url %>" class="flat_button"
+                                style="display: block;margin: 2px auto; color: #000; background: #fff;">
+                            <strong><%- sort.name %></strong>
+                        </a>
+
+                        <% } else { %>
+
+                        <a href="<%- sort.url %>" class="flat_button" style="display: block;margin: 2px auto;">
+                            <%- sort.name %>
+                        </a>
+
+                        <% } %>
+
+                        <% }); %>
+
+                    </div>
+                </div>
+            </div>
+
+            <% } %>
+
+            <% if (typeof top == 'object' && top.movies.length) { %>
+
+            <div class="module clear page_list_module _module">
+                <div class="module_header">
+                    <h3 class="header_top clear_fix">
+                        <span class="header_label fl_l"><%- top.name %></span>
+                    </h3>
+                </div>
+                <div class="module_body clear_fix">
+
+                    <% top.movies.forEach(function (movie) { %>
+
+                    <a href="<%- movie.url %>" class="line_cell clear_fix">
+                        <div class="fl_l thumb">
+                            <img class="cell_img" src="<%- movie.poster %>" alt="Постер <%- movie.title %>">
+                        </div>
+                        <div class="fl_l info">
+                            <%- movie.title_ru %>
+                        </div>
+                    </a>
+
+                    <% }); %>
+
+                </div>
+            </div>
+        </div>
+
+        <% } %>
+
+        <div class="page_block">
+            <div class="module clear page_list_module _module">
+                <div class="module_header">
+                    <h3 class="header_top clear_fix">
+                        <span class="header_label fl_l">Все категории</span>
+                    </h3>
+                </div>
+                <div class="module_body clear_fix">
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>" class="line_cell clear_fix">
+                        <div class="fl_l thumb">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                        </div>
+                        <div class="fl_l info">
+                            Все жанры
+                        </div>
+                    </a>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>" class="line_cell clear_fix">
+                        <div class="fl_l thumb">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                        </div>
+                        <div class="fl_l info">
+                            Все годы
+                        </div>
+                    </a>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>" class="line_cell
+                    clear_fix">
+                        <div class="fl_l thumb">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                        </div>
+                        <div class="fl_l info">
+                            Все страны
+                        </div>
+                    </a>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.actor %>" class="line_cell clear_fix">
+                        <div class="fl_l thumb">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                        </div>
+                        <div class="fl_l info">
+                            Все актеры
+                        </div>
+                    </a>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.director %>" class="line_cell clear_fix">
+                        <div class="fl_l thumb">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                        </div>
+                        <div class="fl_l info">
+                            Все режиссеры
+                        </div>
+                    </a>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.collection %>" class="line_cell clear_fix">
+                        <div class="fl_l thumb">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                        </div>
+                        <div class="fl_l info">
+                            Все подборки
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <% if (typeof soon == 'object' && soon.movies.length) { %>
+
+        <div class="page_block">
+            <div class="module clear album_module _module" id="public_albums">
+                <div class="module_header">
+                    <h3 class="header_top clear_fix">
+                        <span class="header_label fl_l"><%- soon.name %></span>
+                    </h3>
+                </div>
+                <div class="module_body clear_fix">
+
+                    <% soon.movies.forEach(function (movie) { %>
+
+                    <div class="clear_fix clear page_album_row">
+                        <a href="<%- movie.url %>" class="page_album_link">
+                            <div class="page_album_thumb_wrap">
+                                <img class="page_album_thumb" src="<%- movie.poster %>" alt="<%- movie.title_ru %>">
+                            </div>
+                            <div class="page_album_title">
+                                <div class="page_album_title_text" title="<%- movie.title_ru %>"><%- movie.title_ru %></div>
+
+                            </div>
+                        </a>
+                        <a class="bg"></a>
+                    </div>
+
+                    <% }); %>
+
+                </div>
+            </div>
+        </div>
+
+        <% } %>
+
+        <div class="page_block">
+            <div class="module clear page_list_module _module">
+                <div class="module_header">
+                    <h3 class="header_top clear_fix">
+                        <span class="header_label fl_l">Контакты</span>
+                    </h3>
+                </div>
+                <div class="module_body clear_fix">
+                    <div class="line_cell clear_fix">
+                        <div class="fl_l thumb">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                        </div>
+                        <div class="fl_l extra_info">
+                            <div class="people_name">Администрация</div>
+                            <div class="people_desc"></div>
+                            <div class="people_extra"><%- page.email %></div>
+                        </div>
+                    </div>
+                </div>
+
+                <% if (page.social) { %>
+
+                <div class="module_body clear_fix">
+                    <div style="margin: auto; text-align: center;">
+
+                        <% if (page.social.vk) { %>
+                        <a href="<%- page.social.vk %>" class="flat_button" style="display: block;margin: 2px auto; background: #507299">
+                            ВКонтакте
+                        </a>
+                        <% } %>
+                        <% if (page.social.facebook) { %>
+                        <a href="<%- page.social.facebook %>" class="flat_button" style="display: block;margin: 2px
+                        auto; background: #3B5998">
+                            facebook
+                        </a>
+                        <% } %>
+                        <% if (page.social.twitter) { %>
+                        <a href="<%- page.social.twitter %>" class="flat_button" style="display: block;margin: 2px
+                        auto; background: #1DA1F2">
+                            twitter
+                        </a>
+                        <% } %>
+                        <% if (page.social.gplus) { %>
+                        <a href="<%- page.social.gplus %>" class="flat_button" style="display: block;margin: 2px
+                        auto; background: #DB4437">
+                            Google+
+                        </a>
+                        <% } %>
+
+                    </div>
+                </div>
+
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+</div>

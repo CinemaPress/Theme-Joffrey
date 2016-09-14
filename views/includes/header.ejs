@@ -1,0 +1,39 @@
+<div id="page_header_cont" class="page_header_cont">
+    <div class="back"></div>
+    <div id="page_header_wrap" class="page_header_wrap">
+        <div id="page_header" class="p_head p_head_l0" style="width: 960px">
+            <div class="content">
+                <div id="top_nav" class="head_nav">
+                    <div class="head_nav_item fl_l" style="background: url(/themes/joffrey/public/images/logo.png) no-repeat; background-size: auto 42px;">
+                        <a class="top_home_link fl_l" href="<%- page.protocol %><%- page.domain %>"></a>
+                    </div>
+                    <div class="head_nav_item fl_l head_nav_btns">
+                        <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>" class="top_nav_link">Фильмы</a>
+                        <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.mult %>" class="top_nav_link">Мульты</a>
+                        <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.serial %>" class="top_nav_link">Сериалы</a>
+                        <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.anime %>" class="top_nav_link">Аниме</a>
+                        <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.tv %>" class="top_nav_link">ТВ</a>
+                    </div>
+                    <div class="head_nav_item fl_r continueViewingBlock" style="display: none;">
+                        <a href="javascript:void(0)" class="top_nav_link" id="continueViewing">
+                            На чем остановились?
+                        </a>
+                    </div>
+                    <div class="head_nav_item fl_r">
+                        <div id="ts_wrap" class="ts_wrap">
+                            <div class="input_back_wrap no_select">
+                                <div style="margin: 7px 0px 7px 8px; padding: 6px 6px 6px 19px;" class="input_back">
+                                    <div class="input_back_content" style="width: 210px;"></div>
+                                </div>
+                            </div>
+                            <form method="get" action="<%- page.protocol %><%- page.domain %>/<%- page.urls.search %>">
+                                <input class="text ts_input" autocomplete="off" name="q" type="text" placeholder="Поиск">
+                                <button style="display: none;" type="submit"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

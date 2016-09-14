@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <% include includes/head.ejs %>
+
+</head>
+<body>
+<div class="scroll_fix_wrap _page_wrap">
+    <div class="scroll_fix">
+        <div id="page_layout" style="width: 960px;">
+
+            <% include includes/header.ejs %>
+
+            <% include includes/left.ejs %>
+
+            <div id="page_body" class="fl_r" style="width: 795px;">
+                <div class="clear_fix no_login">
+                    <div class="wide_column_left">
+
+                        <% include includes/right.ejs %>
+
+                        <div class="wide_column_wrap">
+                            <div class="wide_column">
+                                <div class="page_block">
+                                    <div class="page_info_wrap">
+                                        <div class="page_top">
+                                            <h1 class="page_name"><%- page.title %></h1>
+                                        </div>
+                                    </div>
+
+                                    <% if (typeof slider == 'object' && slider.movies.length) { %>
+
+                                    <div class="wall_fixed">
+                                        <div class="wall_module">
+                                            <div class="wall_posts own">
+                                                <div class="_post post all own post_fixed">
+                                                    <div class="_post_content">
+                                                        <div class="post_header">
+                                                            <a href="<%- page.protocol %><%- page.domain %>" class="post_image">
+                                                                <img src="/themes/joffrey/public/images/ava.png" class="post_img" height="50" width="50" alt="Ава">
+                                                                <span class="blind_label">.</span>
+                                                            </a>
+                                                            <div class="post_header_info">
+                                                                <h5 class="post_author">
+                                                                    <a class="author" href="<%- page.protocol %><%- page.domain %>">10 лучших фильмов</a>
+                                                                    <span class="explain">
+                                                                        <span class="wall_fixed_label">&nbsp;запись закреплена</span>
+                                                                    </span>
+                                                                </h5>
+                                                                <div class="post_date">
+                                                                    <a class="post_link" href="<%- page.protocol %><%- page.domain %>">
+                                                                        <span class="rel_date">сегодня</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="post_content">
+                                                            <div class="post_info">
+                                                                <div class="wall_text">
+                                                                    <div class="_wall_post_cont">
+                                                                        <div class="page_post_sized_thumbs  clear_fix" style="width: 510px;">
+
+                                                                            <% slider.movies.forEach(function (movie, i) { if (i > 9) {return;} %>
+
+                                                                            <a href="<%- movie.url %>" style="<% if (i > 2) { %>width: 68px; height: 97px;<% } else { %>width: 166px; height: 237px;<% } %> background-image: url(<%- movie.poster %>)" class="page_post_thumb_wrap image_cover fl_l <% if (i == 2) { %>page_post_thumb_last_column<% } else if (i == 9) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else if (i > 2) {  %>page_post_thumb_last_row<% } %>"></a>
+
+                                                                            <% }); %>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <% } %>
+
+                                </div>
+                                <div class="wall_module">
+                                    <div class="wall_posts own">
+                                        <div class="page_block">
+                                            <div class="_post post page_block all own">
+                                                <div class="_post_content">
+                                                    <div class="post_header">
+                                                        <a href="<%- movie.url %>" class="post_image">
+                                                            <img src="/themes/joffrey/public/images/ava.png" class="post_img" height="50" width="50" alt="Ава">
+                                                            <span class="blind_label">.</span>
+                                                        </a>
+                                                        <div class="post_header_info">
+                                                            <h5 class="post_author">
+                                                                <a class="author" href="<%- movie.url %>"><%- movie.title %></a>
+                                                            </h5>
+                                                            <div class="post_date">
+                                                                <span class="rel_date rel_date_needs_update">Премьера: <%- movie.premiere %></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="post_content">
+                                                        <div class="post_info">
+                                                            <div class="wall_text">
+                                                                <div class="_wall_post_cont">
+                                                                    <div class="wall_post_text">
+
+                                                                        <% if (movie.kp_rating) { %>
+                                                                        <div>
+                                                                            Рейтинг КиноПоиск: <%- movie.kp_rating/10 %> <span style="color: #999">(<%- movie.kp_vote %>)</span>
+                                                                        </div>
+                                                                        <% } %>
+
+                                                                        <% if (movie.imdb_rating) { %>
+                                                                        <div>
+                                                                            Рейтинг IMDb: <%- movie.imdb_rating/10 %> <span style="color: #999">(<%- movie.imdb_vote %>)</span>
+                                                                        </div>
+                                                                        <% } %>
+
+                                                                        <br>
+
+                                                                        <% if (movie.year) { %>
+                                                                        <div>
+                                                                            Год выпуска: <%- movie.year %>
+                                                                        </div>
+                                                                        <% } %>
+
+                                                                        <% if (movie.countries) { %>
+                                                                        <div>
+                                                                            Страна: <%- movie.countries %>
+                                                                        </div>
+                                                                        <% } %>
+
+                                                                        <% if (movie.genres) { %>
+                                                                        <div>
+                                                                            Жанр: <%- movie.genres %>
+                                                                        </div>
+                                                                        <% } %>
+
+                                                                        <br>
+
+                                                                        <% if (movie.directors) { %>
+                                                                        <div>
+                                                                            Режиссер: <%- movie.directors %>
+                                                                        </div>
+                                                                        <% } %>
+
+                                                                        <% if (movie.actors) { %>
+                                                                        <div>
+                                                                            Актеры: <%- movie.actors %>
+                                                                        </div>
+                                                                        <% } %>
+
+                                                                        <div style="height: 370px; margin: 20px auto">
+                                                                            <% if (page.player) { %>
+                                                                            <%- page.player %>
+                                                                            <% } %>
+                                                                        </div>
+
+                                                                        <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+                                                                        <script src="//yastatic.net/share2/share.js"></script>
+                                                                        <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus,twitter" data-counter="" style="float:left;"></div>
+
+                                                                        <div style="clear: both"></div>
+
+                                                                        <% if (page.comments) { %>
+                                                                        <%- page.comments %>
+                                                                        <% } %>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
+
+                                        <% if (movies[type].length) { %>
+
+                                        <% movies[type].forEach(function (category) { %>
+
+                                        <div class="wall_module">
+                                            <div class="page_block">
+                                                <h2 class="page_block_h2">
+                                                    <span class="ui_tabs clear_fix ">
+                                                        <span class="ui_tab ui_tab_sel">
+                                                            <%- category.name %>
+                                                        </span>
+                                                    </span>
+                                                </h2>
+                                            </div>
+                                            <div class="wall_posts own">
+                                                <div class="_post post page_block all own">
+                                                    <div class="_post_content">
+                                                        <div class="post_content">
+                                                            <div class="post_info">
+                                                                <div class="wall_text">
+                                                                    <div class="_wall_post_cont">
+                                                                        <div class="page_post_sized_thumbs clear_fix" style="width: 510px;">
+
+                                                                            <% if (category.movies.length) { %>
+
+                                                                            <% category.movies.forEach(function (movie, i) { if (i>7) {return;} %>
+                                                                            <a href="<%- movie.url %>" style="width: 68px; height: 97px; background-image: url(<%- movie.poster %>)" class="page_post_thumb_wrap image_cover fl_l  <% if (i == 6) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else {  %>page_post_thumb_last_row<% } %>" title="<%- movie.title %>"></a>
+
+                                                                            <% }); %>
+
+                                                                            <% } %>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <% }); %>
+
+                                        <% } %>
+
+                                        <% } } } %>
+
+                                        <% if (page.seo) { %>
+
+                                        <div class="page_block">
+                                            <div style="padding: 20px; text-align: justify">
+                                                <%- page.seo %>
+                                            </div>
+                                        </div>
+
+                                        <% } %>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% include includes/footer.ejs %>
+
+            <div class="clear"></div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
