@@ -15,7 +15,7 @@
             <script type="text/javascript" src="//vk.com/js/api/openapi.js?127"></script>
             <div id="vk_groups"></div>
             <script type="text/javascript">
-                VK.Widgets.Group("vk_groups", {mode: 3, width: "230", color1: 'FFFFFF', color2: '000000', color3: '5E81A8'}, <%- group_id %>);
+                VK.Widgets.Group("vk_groups", {mode: 3, width: "230", color1: 'FFFFFF', color2: '000000', color3: '5E81A8'}, parseInt(<%- group_id %>));
             </script>
             <div class="module_body clear_fix" style="color: #ccc">Изменить ID группы на свою в файле /themes/joffrey/views/includes/right.ejs</div>
         </div>
@@ -91,11 +91,13 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <% } %>
+        <% } %>
 
-            <% if (typeof top == 'object' && top.movies.length) { %>
+        <% if (typeof top == 'object' && top.movies.length) { %>
 
+        <div class="page_block">
             <div class="module clear page_list_module _module">
                 <div class="module_header">
                     <h3 class="header_top clear_fix">
