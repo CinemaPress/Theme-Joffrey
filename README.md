@@ -1,7 +1,10 @@
 # Theme Joffrey
-:art: Шаблон «Joffrey» для CinemaPress ACMS
 
 ![Шаблон «Joffrey» для CinemaPress ACMS](https://raw.githubusercontent.com/CinemaPress/Theme-Joffrey/master/screenshot.png "Шаблон «Joffrey» для CinemaPress ACMS")
+
+:art: Шаблон «Joffrey» для CinemaPress ACMS
+
+- <a href="http://Joffrey.CinemaPress.org/" target="_blank">Joffrey.CinemaPress.org</a>
 
 ## Установка
 1. [Скачать архив](https://github.com/CinemaPress/Theme-Joffrey/archive/master.zip)
