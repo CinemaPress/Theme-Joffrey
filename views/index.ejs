@@ -122,7 +122,7 @@
                                                         </a>
                                                         <div class="post_header_info">
                                                             <h5 class="post_author">
-                                                                <a class="author" href="<%- movie.url %>"><%- movie.title %></a>
+                                                                <a class="author" href="<%- movie.url %>"><%- movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> сезон <%- movie.episode %> серия <% if (movie.translate) { %><%- movie.translate %><% } %>)<% } %></a>
                                                             </h5>
                                                             <div class="post_date">
                                                                 <span class="rel_date rel_date_needs_update">Премьера: <%- movie.premiere %></span>
