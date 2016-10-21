@@ -79,6 +79,17 @@
                                     <% } %>
 
                                 </div>
+
+                                <% if (page.seo) { %>
+
+                                <div class="page_block">
+                                    <div style="padding: 20px; text-align: justify">
+                                        <%- page.seo %>
+                                    </div>
+                                </div>
+
+                                <% } %>
+
                                 <div class="wall_module">
                                     <div class="wall_posts own">
 
@@ -192,16 +203,6 @@
 
                                     </div>
                                 </div>
-
-                                <% if (page.seo) { %>
-
-                                <div class="page_block">
-                                    <div style="padding: 20px; text-align: justify">
-                                        <%- page.seo %>
-                                    </div>
-                                </div>
-
-                                <% } %>
 
                             </div>
                         </div>

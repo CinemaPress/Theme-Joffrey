@@ -150,6 +150,11 @@
                                                                         </div>
                                                                         <% } %>
 
+                                                                        <div class="episodesListBlock" style="display: none;">
+                                                                            <h3><%- movie.title %> новые серии</h3>
+                                                                            <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
+                                                                        </div>
+
                                                                         <div style="position: relative; height: 370px; margin: 20px auto">
                                                                             <% if (page.player) { %>
                                                                             <%- page.player %>
@@ -174,6 +179,16 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <% if (page.seo) { %>
+
+                                        <div class="page_block">
+                                            <div style="padding: 20px; text-align: justify">
+                                                <%- page.seo %>
+                                            </div>
+                                        </div>
+
+                                        <% } %>
 
                                         <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
 
@@ -224,16 +239,6 @@
                                         <% } %>
 
                                         <% } } } %>
-
-                                        <% if (page.seo) { %>
-
-                                        <div class="page_block">
-                                            <div style="padding: 20px; text-align: justify">
-                                                <%- page.seo %>
-                                            </div>
-                                        </div>
-
-                                        <% } %>
 
                                     </div>
                                 </div>

@@ -80,6 +80,16 @@
 
                                 </div>
 
+                                <% if (page.seo) { %>
+
+                                <div class="page_block">
+                                    <div style="padding: 20px; text-align: justify">
+                                        <%- page.seo %>
+                                    </div>
+                                </div>
+
+                                <% } %>
+
                                 <% if (typeof categories == 'object' && categories.length) { %>
 
                                 <div class="page_block">
@@ -122,16 +132,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <% } %>
-
-                                <% if (page.seo) { %>
-
-                                <div class="page_block">
-                                    <div style="padding: 20px; text-align: justify">
-                                        <%- page.seo %>
                                     </div>
                                 </div>
 
