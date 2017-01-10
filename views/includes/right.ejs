@@ -186,6 +186,18 @@
             </div>
         </div>
 
+        <% if (typeof page.adv == 'object' && page.adv.right) { %>
+        <div class="page_block">
+            <div class="module clear page_list_module _module">
+                <div class="module_body clear_fix">
+                    <div style="text-align: center;">
+                        <%- page.adv.right %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
         <% if (typeof soon == 'object' && soon.movies.length) { %>
 
         <div class="page_block">
@@ -276,18 +288,6 @@
 
             </div>
         </div>
-
-        <% if (typeof page.adv == 'object' && page.adv.right) { %>
-        <div class="page_block">
-            <div class="module clear page_list_module _module">
-                <div class="module_body clear_fix">
-                    <div style="text-align: center;">
-                        <%- page.adv.right %>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <% } %>
 
     </div>
 </div>

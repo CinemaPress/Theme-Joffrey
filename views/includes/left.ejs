@@ -141,15 +141,15 @@
         </ol>
     </div>
 
+    <% if (typeof page.adv == 'object' && page.adv.left) { %>
+    <div style="text-align: center; margin: 10px auto; max-width: 150px;">
+        <%- page.adv.left %>
+    </div>
+    <% } %>
+
     <div class="recentlyViewedBlock" style="margin: 20px 0 0 0; width: 150px; text-align: center; display: none;">
         <div style="color: #999;">Вы надавно смотрели:</div>
         <div id="recentlyViewed"></div>
     </div>
-
-    <% if (typeof page.adv == 'object' && page.adv.left) { %>
-    <div style="text-align: center; margin: 10px auto;">
-        <%- page.adv.left %>
-    </div>
-    <% } %>
 
 </div>
