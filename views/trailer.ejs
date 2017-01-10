@@ -79,6 +79,15 @@
                                     <% } %>
 
                                 </div>
+
+                                <% if (typeof page.adv == 'object' && page.adv.top) { %>
+                                <div class="page_block">
+                                    <div style="padding: 20px; text-align: center;">
+                                        <%- page.adv.top %>
+                                    </div>
+                                </div>
+                                <% } %>
+
                                 <div class="wall_module">
                                     <div class="wall_posts own">
                                         <div class="page_block">
@@ -155,6 +164,12 @@
                                                                             <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                                                                         </div>
 
+                                                                        <% if (typeof page.adv == 'object' && page.adv.over) { %>
+                                                                        <div style="margin: 10px; text-align: center;">
+                                                                            <%- page.adv.over %>
+                                                                        </div>
+                                                                        <% } %>
+
                                                                         <div style="position: relative; height: 370px; margin: 20px auto">
                                                                             <% if (page.player) { %>
                                                                             <%- page.player %>
@@ -166,6 +181,12 @@
                                                                         <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus,twitter" data-counter="" style="float:left;"></div>
 
                                                                         <div style="clear: both"></div>
+
+                                                                        <% if (typeof page.adv == 'object' && page.adv.under) { %>
+                                                                        <div style="margin: 10px; text-align: center;">
+                                                                            <%- page.adv.under %>
+                                                                        </div>
+                                                                        <% } %>
 
                                                                         <% if (page.comments) { %>
                                                                         <%- page.comments %>
@@ -242,6 +263,15 @@
 
                                     </div>
                                 </div>
+
+                                <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+                                <div class="page_block">
+                                    <div style="padding: 20px; text-align: center;">
+                                        <%- page.adv.bottom %>
+                                    </div>
+                                </div>
+                                <% } %>
+
                             </div>
                         </div>
 
