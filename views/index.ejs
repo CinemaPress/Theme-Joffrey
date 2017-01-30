@@ -209,6 +209,31 @@
 
                                 <% } } } %>
 
+                                <div class="page_block">
+
+                                    <div style="margin: auto; text-align: center; padding: 10px">
+
+                                        <% if (page.pagination.prev.length) { %>
+                                        <% page.pagination.prev.slice(-3).forEach(function (prev) { %>
+                                        <a href="<%- prev.link %>" class="flat_button" rel="nofollow">
+                                            <%- prev.number %>
+                                        </a>
+                                        <% }); %>
+                                        <span class="flat_button" style="color: #000; background: #fff">...</span>
+                                        <% } %>
+                                        <span class="flat_button" style="color: #000; background: #fff"><%- page.pagination.current %></span>
+                                        <% if (page.pagination.next.length) { %>
+                                        <span class="flat_button" style="color: #000; background: #fff">...</span>
+                                        <% page.pagination.next.slice(0,3).forEach(function (next) { %>
+                                        <a href="<%- next.link %>" class="flat_button" rel="nofollow">
+                                            <%- next.number %>
+                                        </a>
+                                        <% }); %>
+                                        <% } %>
+
+                                    </div>
+                                </div>
+
                                 <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
                                 <div class="page_block">
                                     <div style="padding: 20px; text-align: center;">
