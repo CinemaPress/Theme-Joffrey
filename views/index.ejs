@@ -230,6 +230,10 @@
                                         </a>
                                         <% }); %>
                                         <% } %>
+                                        <% if (page.pagination.all) { %>
+                                        <span class="flat_button" style="color: #000; background: #fff">...</span>
+                                        <a href="<%- page.pagination.all.link %>" class="flat_button" rel="nofollow"><%- page.pagination.all.number %></a>
+                                        <% } %>
 
                                     </div>
                                 </div>
