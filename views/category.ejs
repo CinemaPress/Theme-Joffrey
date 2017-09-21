@@ -234,9 +234,7 @@
                                         <% } %>
                                         <% if (page.pagination.prev.length) { %>
                                         <% page.pagination.prev.forEach(function (prev) { %>
-                                        <a href="<%- prev.link %>" class="flat_button" rel="nofollow">
-                                            <%- prev.number %>
-                                        </a>
+                                        <a href="<%- prev.link %>" class="flat_button" rel="nofollow"><%- prev.number %></a>
                                         <% }); %>
                                         <span class="flat_button" style="color: #000; background: #fff">...</span>
                                         <% } %>
@@ -244,9 +242,7 @@
                                         <% if (page.pagination.next.length) { %>
                                         <span class="flat_button" style="color: #000; background: #fff">...</span>
                                         <% page.pagination.next.forEach(function (next) { %>
-                                        <a href="<%- next.link %>" class="flat_button" rel="nofollow">
-                                            <%- next.number %>
-                                        </a>
+                                        <a href="<%- next.link %>" class="flat_button" rel="nofollow"><%- next.number %></a>
                                         <% }); %>
                                         <% } %>
                                         <% if (page.pagination.last) { %>
