@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" prefix="og: http://ogp.me/ns#
+              video: http://ogp.me/ns/video#
+              ya: http://webmaster.yandex.ru/vocabularies/">
 <head>
 
     <% include includes/head.ejs %>
@@ -27,7 +29,7 @@
                                         </div>
                                     </div>
 
-                                    <% if (typeof slider == 'object' && slider.movies.length) { %>
+                                    <% if (typeof slider === 'object' && slider.length) { %>
 
                                     <div class="wall_fixed">
                                         <div class="wall_module">
@@ -35,19 +37,19 @@
                                                 <div class="_post post all own post_fixed">
                                                     <div class="_post_content">
                                                         <div class="post_header">
-                                                            <a href="<%- page.protocol %><%- page.domain %>" class="post_image">
+                                                            <a href="/" class="post_image">
                                                                 <img src="/themes/joffrey/public/images/ava.png" class="post_img" height="50" width="50" alt="Ава">
                                                                 <span class="blind_label">.</span>
                                                             </a>
                                                             <div class="post_header_info">
                                                                 <h5 class="post_author">
-                                                                    <a class="author" href="<%- page.protocol %><%- page.domain %>">10 лучших фильмов</a>
+                                                                    <a class="author" href="/">10 лучших фильмов</a>
                                                                     <span class="explain">
                                                                         <span class="wall_fixed_label">&nbsp;запись закреплена</span>
                                                                     </span>
                                                                 </h5>
                                                                 <div class="post_date">
-                                                                    <a class="post_link" href="<%- page.protocol %><%- page.domain %>">
+                                                                    <a class="post_link" href="/">
                                                                         <span class="rel_date">сегодня</span>
                                                                     </a>
                                                                 </div>
@@ -59,9 +61,9 @@
                                                                     <div class="_wall_post_cont">
                                                                         <div class="page_post_sized_thumbs  clear_fix" style="width: 510px;">
 
-                                                                            <% slider.movies.forEach(function (movie, i) { if (i > 9) {return;} %>
+                                                                            <% slider.forEach(function (movie, i) { if (i > 9) {return;} %>
 
-                                                                            <a href="<%- movie.url %>" style="<% if (i > 2) { %>width: 68px; height: 97px;<% } else { %>width: 166px; height: 237px;<% } %> background-image: url(<%- movie.poster %>)" class="page_post_thumb_wrap image_cover fl_l <% if (i == 2) { %>page_post_thumb_last_column<% } else if (i == 9) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else if (i > 2) {  %>page_post_thumb_last_row<% } %>"></a>
+                                                                            <a href="<%- movie.url %>" style="<% if (i > 2) { %>width: 68px; height: 97px;<% } else { %>width: 166px; height: 237px;<% } %> background-image: url(<%- movie.poster %>)" class="page_post_thumb_wrap image_cover fl_l <% if (i === 2) { %>page_post_thumb_last_column<% } else if (i === 9) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else if (i > 2) {  %>page_post_thumb_last_row<% } %>"></a>
 
                                                                             <% }); %>
 
@@ -80,7 +82,7 @@
 
                                 </div>
 
-                                <% if (typeof page.adv == 'object' && page.adv.top) { %>
+                                <% if (typeof page.adv === 'object' && page.adv.top) { %>
                                 <div class="page_block">
                                     <div style="padding: 20px; text-align: center;">
                                         <%- page.adv.top %>
@@ -102,9 +104,11 @@
                                                             <h5 class="post_author">
                                                                 <a class="author" href="<%- movie.url %>"><%- movie.title %></a>
                                                             </h5>
+                                                            <% if (movie.premiere) { %>
                                                             <div class="post_date">
                                                                 <span class="rel_date rel_date_needs_update">Премьера: <%- movie.premiere %></span>
                                                             </div>
+                                                            <% } %>
                                                         </div>
                                                     </div>
                                                     <div class="post_content">
@@ -126,6 +130,18 @@
                                                                         <% } %>
 
                                                                         <br>
+
+                                                                        <% if (movie.quality) { %>
+                                                                        <div>
+                                                                            Качество: <%- movie.quality %>
+                                                                        </div>
+                                                                        <% } %>
+                                                                        <% if (movie.translate) { %>
+                                                                        <div>
+                                                                            Перевод: <%- movie.translate %>
+                                                                        </div>
+                                                                        <br>
+                                                                        <% } %>
 
                                                                         <% if (movie.year) { %>
                                                                         <div>
@@ -164,13 +180,13 @@
                                                                             <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                                                                         </div>
 
-                                                                        <% if (typeof page.adv == 'object' && page.adv.over) { %>
+                                                                        <% if (typeof page.adv === 'object' && page.adv.over) { %>
                                                                         <div style="margin: 10px; text-align: center;">
                                                                             <%- page.adv.over %>
                                                                         </div>
                                                                         <% } %>
 
-                                                                        <div style="position: relative; height: 370px; margin: 20px auto">
+                                                                        <div style="position: relative; height: 370px; margin: 20px auto; border-radius: 10px; background: transparent;overflow: hidden;">
                                                                             <% if (page.player) { %>
                                                                             <%- page.player %>
                                                                             <% } %>
@@ -182,7 +198,7 @@
 
                                                                         <div style="clear: both"></div>
 
-                                                                        <% if (typeof page.adv == 'object' && page.adv.under) { %>
+                                                                        <% if (typeof page.adv === 'object' && page.adv.under) { %>
                                                                         <div style="margin: 10px; text-align: center;">
                                                                             <%- page.adv.under %>
                                                                         </div>
@@ -211,7 +227,24 @@
 
                                         <% } %>
 
-                                        <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
+                                        <% if (typeof contents === 'object' && contents.length) { %>
+                                        <div style="clear: both"></div>
+                                        <% contents.forEach(function (content) { %>
+                                        <div style="float: left; width: 50%;">
+                                            <div style="margin: 0; padding: 10px">
+                                                <a href="<%- content.url %>" class="cinemapress-news">
+                                                    <img src="<%- content.image %>" class="cinemapress-news-image" alt="<%- content.title %>">
+                                                    <div class="cinemapress-news-title">
+                                                        <%- content.title %>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <% }); %>
+                                        <div style="clear: both"></div>
+                                        <% } %>
+
+                                        <% if (typeof movies === 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
 
                                         <% if (movies[type].length) { %>
 
@@ -239,7 +272,7 @@
                                                                             <% if (category.movies.length) { %>
 
                                                                             <% category.movies.forEach(function (movie, i) { if (i>7) {return;} %>
-                                                                            <a href="<%- movie.url %>" style="width: 68px; height: 97px; background-image: url(<%- movie.poster %>)" class="page_post_thumb_wrap image_cover fl_l  <% if (i == 6) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else {  %>page_post_thumb_last_row<% } %>" title="<%- movie.title %>"></a>
+                                                                            <a href="<%- movie.url %>" style="width: 68px; height: 97px; background-image: url(<%- movie.poster %>)" class="page_post_thumb_wrap image_cover fl_l  <% if (i === 6) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else {  %>page_post_thumb_last_row<% } %>" title="<%- movie.title %>"></a>
 
                                                                             <% }); %>
 
@@ -264,7 +297,7 @@
                                     </div>
                                 </div>
 
-                                <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+                                <% if (typeof page.adv === 'object' && page.adv.bottom) { %>
                                 <div class="page_block">
                                     <div style="padding: 20px; text-align: center;">
                                         <%- page.adv.bottom %>

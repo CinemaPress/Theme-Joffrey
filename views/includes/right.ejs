@@ -3,7 +3,7 @@
         <div class="page_block page_photo">
             <div class="page_avatar_wrap">
                 <div id="page_avatar" class="page_avatar">
-                    <img class="page_avatar_img" src="<% if (typeof movie == 'object') { %><%- movie.poster %><% } else { %>/themes/joffrey/public/images/ava.png<% } %>" alt="Ава">
+                    <img class="page_avatar_img" src="<% if (typeof movie === 'object') { %><%- movie.poster %><% } else { %>/themes/joffrey/public/images/ava.png<% } %>" alt="Ава">
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
 
         <% } %>
 
-        <% if (typeof movie == 'object') { %>
+        <% if (typeof movie === 'object') { %>
 
         <div class="page_block">
             <div class="module clear page_list_module _module">
@@ -57,7 +57,7 @@
 
         <% } %>
 
-        <% if (typeof page == 'object' && page.sorting) { %>
+        <% if (typeof page.sorting === 'object') { %>
 
         <div class="page_block">
             <div class="module clear page_list_module _module">
@@ -95,18 +95,18 @@
 
         <% } %>
 
-        <% if (typeof top == 'object' && top.movies.length) { %>
+        <% if (typeof top === 'object' && top.length) { %>
 
         <div class="page_block">
             <div class="module clear page_list_module _module">
                 <div class="module_header">
                     <h3 class="header_top clear_fix">
-                        <span class="header_label fl_l"><%- top.name %></span>
+                        <span class="header_label fl_l">Топ</span>
                     </h3>
                 </div>
                 <div class="module_body clear_fix">
 
-                    <% top.movies.forEach(function (movie) { %>
+                    <% top.forEach(function (movie) { %>
 
                     <a href="<%- movie.url %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
@@ -133,7 +133,7 @@
                     </h3>
                 </div>
                 <div class="module_body clear_fix">
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>" class="line_cell clear_fix">
+                    <a href="/<%- page.urls.genre %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
                             <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
                         </div>
@@ -141,7 +141,7 @@
                             Все жанры
                         </div>
                     </a>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>" class="line_cell clear_fix">
+                    <a href="/<%- page.urls.year %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
                             <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
                         </div>
@@ -149,7 +149,7 @@
                             Все годы
                         </div>
                     </a>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>" class="line_cell
+                    <a href="/<%- page.urls.country %>" class="line_cell
                     clear_fix">
                         <div class="fl_l thumb">
                             <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
@@ -158,7 +158,7 @@
                             Все страны
                         </div>
                     </a>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.actor %>" class="line_cell clear_fix">
+                    <a href="/<%- page.urls.actor %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
                             <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
                         </div>
@@ -166,7 +166,7 @@
                             Все актеры
                         </div>
                     </a>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.director %>" class="line_cell clear_fix">
+                    <a href="/<%- page.urls.director %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
                             <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
                         </div>
@@ -174,7 +174,7 @@
                             Все режиссеры
                         </div>
                     </a>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.collection %>" class="line_cell clear_fix">
+                    <a href="/<%- page.urls.content %>?tag=Коллекция" class="line_cell clear_fix">
                         <div class="fl_l thumb">
                             <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
                         </div>
@@ -186,7 +186,7 @@
             </div>
         </div>
 
-        <% if (typeof page.adv == 'object' && page.adv.right) { %>
+        <% if (typeof page.adv === 'object' && page.adv.right) { %>
         <div class="page_block">
             <div class="module clear page_list_module _module">
                 <div class="module_body clear_fix">
@@ -198,18 +198,18 @@
         </div>
         <% } %>
 
-        <% if (typeof soon == 'object' && soon.movies.length) { %>
+        <% if (typeof soon === 'object' && soon.length) { %>
 
         <div class="page_block">
             <div class="module clear album_module _module" id="public_albums">
                 <div class="module_header">
                     <h3 class="header_top clear_fix">
-                        <span class="header_label fl_l"><%- soon.name %></span>
+                        <span class="header_label fl_l">Скоро выйдет</span>
                     </h3>
                 </div>
                 <div class="module_body clear_fix">
 
-                    <% soon.movies.forEach(function (movie) { %>
+                    <% soon.forEach(function (movie) { %>
 
                     <div class="clear_fix clear page_album_row">
                         <a href="<%- movie.url %>" class="page_album_link">
@@ -230,6 +230,55 @@
             </div>
         </div>
 
+        <% } %>
+
+        <% if (typeof news === 'object' && news.length) { %>
+        <% news.forEach(function (content) { %>
+        <div style="float: left; width: 100%;">
+            <div style="margin: 0; padding: 10px 0;">
+                <a href="<%- content.url %>" class="cinemapress-news">
+                    <img src="<%- content.image %>" class="cinemapress-news-image" alt="<%- content.title %>" style="height: 160px">
+                    <div class="cinemapress-news-title">
+                        <%- content.title %>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <% }); %>
+        <div style="clear: both"></div>
+        <% } %>
+
+        <% if (typeof recent === 'object' && recent.length) { %>
+        <% recent.forEach(function (comment) { %>
+        <div>
+            <div class="cinemapress-recent" style="border: 0; background: #fff">
+                <div class="cinemapress-recent-head">
+                    <% if (comment.avatar) { %>
+                    <div class="cinemapress-recent-head-avatar" style="background: #507299; border: 5px #507299 solid;">
+                        <img src="<%- comment.avatar %>" alt="<%- comment.user %>">
+                    </div>
+                    <% } %>
+                    <div class="cinemapress-recent-head-meta">
+                        <div>
+                            <a href="<%- comment.url %>" style="color: #000"><%- comment.title %></a>
+                        </div>
+                        <div>
+                        <span>
+                            <%- comment.user %>
+                        </span><span>
+                            сказал(а)
+                        </span><span>
+                            <%- comment.date %>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cinemapress-recent-comment" style="background:#507299; color: #fff">
+                    <%- comment.comment %>
+                </div>
+            </div>
+        </div>
+        <% }); %>
         <% } %>
 
         <div class="page_block">
@@ -278,6 +327,18 @@
                         <a href="<%- page.social.gplus %>" class="flat_button" style="display: block;margin: 2px
                         auto; background: #DB4437">
                             Google+
+                        </a>
+                        <% } %>
+                        <% if (page.social.youtube) { %>
+                        <a href="<%- page.social.youtube %>" class="flat_button" style="display: block;margin: 2px
+                        auto; background: #FF0000">
+                            YouTube
+                        </a>
+                        <% } %>
+                        <% if (page.social.instagram) { %>
+                        <a href="<%- page.social.instagram %>" class="flat_button" style="display: block;margin: 2px
+                        auto; background: #005CA3">
+                            Instagram
                         </a>
                         <% } %>
 
