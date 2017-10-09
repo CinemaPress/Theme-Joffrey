@@ -216,13 +216,11 @@
                                         </div>
 
                                         <% if (page.seo) { %>
-
                                         <div class="page_block">
                                             <div style="padding: 20px; text-align: justify">
                                                 <%- page.seo %>
                                             </div>
                                         </div>
-
                                         <% } %>
 
                                         <% if (typeof contents === 'object' && contents.length) { %>
@@ -242,12 +240,10 @@
                                         <div style="clear: both"></div>
                                         <% } %>
 
-                                        <% if (typeof movies === 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
-
-                                        <% if (movies[type].length) { %>
-
-                                        <% movies[type].forEach(function (category) { %>
-
+                                        <% if (typeof movies === 'object') {
+                                                for (var type in movies) {
+                                        if (movies.hasOwnProperty(type) && movies[type].length) {
+                                        movies[type].forEach(function (category) { %>
                                         <div class="wall_module">
                                             <div class="page_block">
                                                 <h2 class="page_block_h2">
@@ -266,16 +262,10 @@
                                                                 <div class="wall_text">
                                                                     <div class="_wall_post_cont">
                                                                         <div class="page_post_sized_thumbs clear_fix" style="width: 510px;">
-
-                                                                            <% if (category.movies.length) { %>
-
-                                                                            <% category.movies.forEach(function (movie, i) { if (i>7) {return;} %>
+                                                                            <% if (category.movies.length) {
+                                                                            category.movies.forEach(function (movie, i) { if (i>7) {return;} %>
                                                                             <a href="<%- movie.url %>" style="width: 68px; height: 97px; background-image: url(<%- movie.poster %>)" class="page_post_thumb_wrap image_cover fl_l  <% if (i === 6) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else {  %>page_post_thumb_last_row<% } %>" title="<%- movie.title %>"></a>
-
-                                                                            <% }); %>
-
-                                                                            <% } %>
-
+                                                                            <% }); } %>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -285,12 +275,7 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <% }); %>
-
-                                        <% } %>
-
-                                        <% } } } %>
+                                        <% }); } } } %>
 
                                     </div>
                                 </div>

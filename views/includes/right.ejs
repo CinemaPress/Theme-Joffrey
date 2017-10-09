@@ -37,19 +37,26 @@
                         <a href="<%- movie.url %>" class="flat_button" style="display: block;margin: 2px auto;">
                             О фильме
                         </a>
+                        <% if (page.urls.movies.online) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="flat_button" style="display: block;margin: 2px auto;">
                             Онлайн
                         </a>
+                        <% } %>
+                        <% if (page.urls.movies.download) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="flat_button" style="display: block;margin: 2px auto;">
                             Скачать
                         </a>
+                        <% } %>
+                        <% if (page.urls.movies.trailer) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>" class="flat_button" style="display: block;margin: 2px auto;">
                             Трейлер
                         </a>
+                        <% } %>
+                        <% if (page.urls.movies.picture) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.picture %>" class="flat_button" style="display: block;margin: 2px auto;">
                             Кадры
                         </a>
-
+                        <% } %>
                     </div>
                 </div>
             </div>
