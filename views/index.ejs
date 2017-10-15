@@ -114,12 +114,12 @@
                                                 <div class="_post_content">
                                                     <div class="post_header">
                                                         <a href="<%- movie.url %>" class="post_image">
-                                                            <img src="<%- movie.poster_min %>" class="post_img" height="50" width="50" alt="<%- movie.title %>">
+                                                            <img src="<%- movie.poster_min %>" class="post_img" height="50" width="50" alt="<%= movie.title %>">
                                                             <span class="blind_label">.</span>
                                                         </a>
                                                         <div class="post_header_info">
                                                             <h5 class="post_author">
-                                                                <a class="author" href="<%- movie.url %>"><%- movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> сезон <%- movie.episode %> серия)<% } %></a>
+                                                                <a class="author" href="<%- movie.url %>"><%= movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> сезон <%- movie.episode %> серия)<% } %></a>
                                                             </h5>
                                                             <% if (movie.premiere) { %>
                                                             <div class="post_date">
