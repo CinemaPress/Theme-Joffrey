@@ -23,7 +23,7 @@
                                 <div class="page_block">
                                     <div class="page_info_wrap">
                                         <div class="page_top">
-                                            <h1 class="page_name"><%= page.title %></h1>
+                                            <h1 class="page_name"><%- page.h1 %></h1>
                                         </div>
                                     </div>
 
@@ -36,19 +36,19 @@
                                                     <div class="_post_content">
                                                         <div class="post_header">
                                                             <a href="/" class="post_image">
-                                                                <img src="/themes/joffrey/public/images/ava.png" class="post_img" height="50" width="50" alt="Ава">
+                                                                <img src="/themes/joffrey/public/images/ava.png" class="post_img" height="50" width="50" alt="Logo">
                                                                 <span class="blind_label">.</span>
                                                             </a>
                                                             <div class="post_header_info">
                                                                 <h5 class="post_author">
-                                                                    <a class="author" href="/">10 лучших фильмов</a>
+                                                                    <a class="author" href="/"><%- page.l.popular %> <%- page.l.movies %></a>
                                                                     <span class="explain">
-                                                                        <span class="wall_fixed_label">&nbsp;запись закреплена</span>
+                                                                        <span class="wall_fixed_label">&nbsp;</span>
                                                                     </span>
                                                                 </h5>
                                                                 <div class="post_date">
                                                                     <a class="post_link" href="/">
-                                                                        <span class="rel_date">сегодня</span>
+                                                                        <span class="rel_date"><%- new Date().toISOString().slice(0, 10) %></span>
                                                                     </a>
                                                                 </div>
                                                             </div>

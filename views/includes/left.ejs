@@ -19,7 +19,7 @@
                     <span class="left_fixer">
                         <span class="left_count_wrap fl_r left_void"><span class="inl_bl left_count_sign"></span></span>
                         <span class="left_icon fl_l"></span>
-                        <span class="left_label inl_bl"><%- year.title %> год</span>
+                        <span class="left_label inl_bl"><%- year.title %></span>
                     </span>
                 </a>
             </li>
@@ -46,7 +46,7 @@
     <% } %>
 
     <div class="recentlyViewedBlock" style="margin: 20px 0 0 0; width: 150px; text-align: center; display: none;">
-        <div style="color: #999;">Вы надавно смотрели:</div>
+        <div style="color: #999;"><%- page.l.watched %>:</div>
         <div id="recentlyViewed"></div>
     </div>
 

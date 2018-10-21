@@ -23,7 +23,7 @@
                                 <div class="page_block">
                                     <div class="page_info_wrap">
                                         <div class="page_top">
-                                            <h1 class="page_name"><%= page.title %></h1>
+                                            <h1 class="page_name"><%- page.h1 %></h1>
                                         </div>
                                     </div>
 
@@ -35,19 +35,19 @@
                                                     <div class="_post_content">
                                                         <div class="post_header">
                                                             <a href="/" class="post_image">
-                                                                <img src="/themes/joffrey/public/images/ava.png" class="post_img" height="50" width="50" alt="Ава">
+                                                                <img src="/themes/joffrey/public/images/ava.png" class="post_img" height="50" width="50" alt="Logo">
                                                                 <span class="blind_label">.</span>
                                                             </a>
                                                             <div class="post_header_info">
                                                                 <h5 class="post_author">
-                                                                    <a class="author" href="/">10 лучших фильмов</a>
+                                                                    <a class="author" href="/"><%- page.l.popular %> <%- page.l.movies %></a>
                                                                     <span class="explain">
-                                                                        <span class="wall_fixed_label">&nbsp;запись закреплена</span>
+                                                                        <span class="wall_fixed_label">&nbsp;</span>
                                                                     </span>
                                                                 </h5>
                                                                 <div class="post_date">
                                                                     <a class="post_link" href="/">
-                                                                        <span class="rel_date">сегодня</span>
+                                                                        <span class="rel_date"><%- new Date().toISOString().slice(0, 10) %></span>
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -119,11 +119,11 @@
                                                         </a>
                                                         <div class="post_header_info">
                                                             <h5 class="post_author">
-                                                                <a class="author" href="<%- movie.url %>"><%= movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> сезон <%- movie.episode %> серия)<% } %></a>
+                                                                <a class="author" href="<%- movie.url %>"><%= movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %>)<% } %></a>
                                                             </h5>
                                                             <% if (movie.premiere) { %>
                                                             <div class="post_date">
-                                                                <span class="rel_date rel_date_needs_update">Премьера: <%- movie.premiere %></span>
+                                                                <span class="rel_date rel_date_needs_update"><%- page.l.premiere %>: <%- movie.premiere %></span>
                                                             </div>
                                                             <% } %>
                                                         </div>
@@ -136,12 +136,12 @@
 
                                                                         <% if (movie.kp_rating) { %>
                                                                         <div>
-                                                                            Рейтинг КиноПоиск: <%- movie.kp_rating/10 %> <span style="color: #999">(<%- movie.kp_vote %>)</span>
+                                                                            <%- page.l.rating %> <%- page.l.kp %>: <%- movie.kp_rating/10 %> <span style="color: #999">(<%- movie.kp_vote %>)</span>
                                                                         </div>
                                                                         <% } %>
                                                                         <% if (movie.imdb_rating) { %>
                                                                         <div>
-                                                                            Рейтинг IMDb: <%- movie.imdb_rating/10 %> <span style="color: #999">(<%- movie.imdb_vote %>)</span>
+                                                                            <%- page.l.rating %> <%- page.l.imdb %>: <%- movie.imdb_rating/10 %> <span style="color: #999">(<%- movie.imdb_vote %>)</span>
                                                                         </div>
                                                                         <% } %>
 
@@ -149,31 +149,31 @@
 
                                                                         <% if (movie.quality) { %>
                                                                         <div>
-                                                                            Качество: <%- movie.quality %>
+                                                                            <%- page.l.quality %>: <%- movie.quality %>
                                                                         </div>
                                                                         <% } %>
                                                                         <% if (movie.translate) { %>
                                                                         <div>
-                                                                            Перевод: <%- movie.translate %>
+                                                                            <%- page.l.translate %>: <%- movie.translate %>
                                                                         </div>
                                                                         <br>
                                                                         <% } %>
 
                                                                         <% if (movie.year) { %>
                                                                         <div>
-                                                                            Год выпуска: <%- movie.year %>
+                                                                            <%- page.l.year %>: <%- movie.year %>
                                                                         </div>
                                                                         <% } %>
 
                                                                         <% if (movie.countries) { %>
                                                                         <div>
-                                                                            Страна: <%- movie.countries %>
+                                                                            <%- page.l.countries %>: <%- movie.countries %>
                                                                         </div>
                                                                         <% } %>
 
                                                                         <% if (movie.genres) { %>
                                                                         <div>
-                                                                            Жанр: <%- movie.genres %>
+                                                                            <%- page.l.genres %>: <%- movie.genres %>
                                                                         </div>
                                                                         <% } %>
 
@@ -191,7 +191,7 @@
                                                                         <% var trlr = (page.urls.movies.trailer) ? movie.url + '/' + page.urls.movies.trailer : movie.url; %>
                                                                         <a href="<%- trlr %>" style="width: 260px; height: 172px; background-image: url(<% if (movie.pictures[0]) { %><%- movie.pictures[0].picture_min %><% } else { %>/themes/default/public/desktop/img/player.png<% } %>)" class="page_post_thumb_wrap image_cover page_post_thumb_video page_post_thumb_last_column fl_l"><span class="page_post_video_duration">2:<%- (movie.title.length + 9 >= 60) ? '37' : movie.title.length + 9; %></span></a>
                                                                         <% var onln = (page.urls.movies.online) ? movie.url + '/' + page.urls.movies.online : movie.url; %>
-                                                                        <a href="<%- onln %>" style="width: 260px; height: 172px; background-image: url(<% if (movie.pictures[1]) { %><%- movie.pictures[1].picture_min %><% } else { %>/themes/default/public/desktop/img/player.png<% } %>)" class="page_post_thumb_wrap image_cover page_post_thumb_video page_post_thumb_last_column page_post_thumb_last_row fl_l"><span class="page_post_video_duration"><%- (movie.title.length + 10 >= 60) ? '2' : '1'; %>:<%- (movie.title_ru.length + 20 >= 60) ? '28' : movie.title_ru.length + 20; %>:<%- (movie.title_en.length + 10 >= 60) ? '08' : movie.title_en.length + 10; %></span></a>
+                                                                        <a href="<%- onln %>" style="width: 260px; height: 172px; background-image: url(<% if (movie.pictures[1]) { %><%- movie.pictures[1].picture_min %><% } else { %>/themes/default/public/desktop/img/player.png<% } %>)" class="page_post_thumb_wrap image_cover page_post_thumb_video page_post_thumb_last_column page_post_thumb_last_row fl_l"><span class="page_post_video_duration"><%- (movie.title.length + 10 >= 60) ? '2' : '1'; %>:<%- (movie.title.length + 20 >= 60) ? '28' : movie.title.length + 20; %>:<%- (movie.title_en.length + 10 >= 60) ? '08' : movie.title_en.length + 10; %></span></a>
                                                                     </div>
                                                                 </div>
                                                             </div>

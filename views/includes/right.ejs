@@ -3,13 +3,13 @@
         <div class="page_block page_photo">
             <div class="page_avatar_wrap">
                 <div id="page_avatar" class="page_avatar">
-                    <img class="page_avatar_img" src="<% if (typeof movie === 'object') { %><%- movie.poster %><% } else { %>/themes/joffrey/public/images/ava.png<% } %>" alt="Ава">
+                    <img class="page_avatar_img" src="<% if (typeof movie === 'object') { %><%- movie.poster %><% } else { %>/themes/joffrey/public/images/ava.png<% } %>" alt="<%= page.title %>" title="<%= page.title %>" id="cinemapress-poster">
                 </div>
             </div>
         </div>
 
         <!--
-        <% var group_id = 26750264; /* ID Вашей группы ВКонтакте */ %>
+        <% var group_id = 26750264; /* ID public VK.com */ %>
         <% if (group_id) { %>
 
         <div class="page_block">
@@ -29,33 +29,33 @@
             <div class="module clear page_list_module _module">
                 <div class="module_header">
                     <h3 class="header_top clear_fix">
-                        <span class="header_label fl_l">Разделы фильма</span>
+                        <span class="header_label fl_l"><%- page.l.navigation %></span>
                     </h3>
                 </div>
                 <div class="module_body clear_fix">
                     <div style="margin: auto; text-align: center;">
 
                         <a href="<%- movie.url %>" class="flat_button" style="display: block;margin: 2px auto;">
-                            О фильме
+                            <%- page.l.information %>
                         </a>
                         <% if (page.urls.movies.online) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="flat_button" style="display: block;margin: 2px auto;">
-                            Онлайн
+                            <%- page.l.online %>
                         </a>
                         <% } %>
                         <% if (page.urls.movies.download) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="flat_button" style="display: block;margin: 2px auto;">
-                            Скачать
+                            <%- page.l.download %>
                         </a>
                         <% } %>
                         <% if (page.urls.movies.trailer) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>" class="flat_button" style="display: block;margin: 2px auto;">
-                            Трейлер
+                            <%- page.l.trailer %>
                         </a>
                         <% } %>
                         <% if (page.urls.movies.picture) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.picture %>" class="flat_button" style="display: block;margin: 2px auto;">
-                            Кадры
+                            <%- page.l.picture %>
                         </a>
                         <% } %>
                     </div>
@@ -71,7 +71,7 @@
             <div class="module clear page_list_module _module">
                 <div class="module_header">
                     <h3 class="header_top clear_fix">
-                        <span class="header_label fl_l">Сортировка</span>
+                        <span class="header_label fl_l"><%- page.l.sorting %></span>
                     </h3>
                 </div>
                 <div class="module_body clear_fix">
@@ -109,7 +109,7 @@
             <div class="module clear page_list_module _module">
                 <div class="module_header">
                     <h3 class="header_top clear_fix">
-                        <span class="header_label fl_l">Топ</span>
+                        <span class="header_label fl_l"><%- page.l.top %></span>
                     </h3>
                 </div>
                 <div class="module_body clear_fix">
@@ -118,7 +118,7 @@
 
                     <a href="<%- movie.url %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="<%- movie.poster %>" alt="Постер <%= movie.title %>">
+                            <img class="cell_img" src="<%- movie.poster %>" alt="<%= movie.title %>">
                         </div>
                         <div class="fl_l info">
                             <%= movie.title %>
@@ -137,57 +137,57 @@
             <div class="module clear page_list_module _module">
                 <div class="module_header">
                     <h3 class="header_top clear_fix">
-                        <span class="header_label fl_l">Все категории</span>
+                        <span class="header_label fl_l"><%- page.l.allCategories %></span>
                     </h3>
                 </div>
                 <div class="module_body clear_fix">
                     <a href="/<%- page.urls.genre %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Logo">
                         </div>
                         <div class="fl_l info">
-                            Все жанры
+                            <%- page.l.allGenres %>
                         </div>
                     </a>
                     <a href="/<%- page.urls.year %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Logo">
                         </div>
                         <div class="fl_l info">
-                            Все годы
+                            <%- page.l.allYears %>
                         </div>
                     </a>
                     <a href="/<%- page.urls.country %>" class="line_cell
                     clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Logo">
                         </div>
                         <div class="fl_l info">
-                            Все страны
+                            <%- page.l.allCountries %>
                         </div>
                     </a>
                     <a href="/<%- page.urls.actor %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Logo">
                         </div>
                         <div class="fl_l info">
-                            Все актеры
+                            <%- page.l.allActors %>
                         </div>
                     </a>
                     <a href="/<%- page.urls.director %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Logo">
                         </div>
                         <div class="fl_l info">
-                            Все режиссеры
+                            <%- page.l.allDirectors %>
                         </div>
                     </a>
-                    <a href="/<%- page.urls.content %>?tag=Коллекция" class="line_cell clear_fix">
+                    <a href="/<%- page.urls.content %>?tag=<%- page.l.collections %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Logo">
                         </div>
                         <div class="fl_l info">
-                            Все подборки
+                            <%- page.l.collections %>
                         </div>
                     </a>
                 </div>
@@ -212,7 +212,7 @@
             <div class="module clear album_module _module" id="public_albums">
                 <div class="module_header">
                     <h3 class="header_top clear_fix">
-                        <span class="header_label fl_l">Скоро выйдет</span>
+                        <span class="header_label fl_l"><%- page.l.soon %></span>
                     </h3>
                 </div>
                 <div class="module_body clear_fix">
@@ -273,7 +273,7 @@
                         <span>
                             <%- comment.user %>
                         </span><span>
-                            сказал(а)
+                            <%- page.l.said %>
                         </span><span>
                             <%- comment.date %>
                         </span>
@@ -292,16 +292,16 @@
             <div class="module clear page_list_module _module">
                 <div class="module_header">
                     <h3 class="header_top clear_fix">
-                        <span class="header_label fl_l">Контакты</span>
+                        <span class="header_label fl_l"><%- page.l.contacts %></span>
                     </h3>
                 </div>
                 <div class="module_body clear_fix">
                     <div class="line_cell clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Ава">
+                            <img class="cell_img" src="/themes/joffrey/public/images/ava.png" alt="Logo">
                         </div>
                         <div class="fl_l extra_info">
-                            <div class="people_name">Администрация</div>
+                            <div class="people_name">Email</div>
                             <div class="people_desc"></div>
                             <div class="people_extra"><span id="mylo">Activate JS</span><script>(function(d,i,l,r){d.getElementById(i).innerHTML=l+'@'+r;})(window.document,'mylo','<%- page.email.split('@')[0] %>','<%- page.email.split('@')[1] %>');</script></div>
                         </div>
@@ -315,7 +315,7 @@
 
                         <% if (page.social.vk) { %>
                         <a href="<%- page.social.vk %>" class="flat_button" style="display: block;margin: 2px auto; background: #507299">
-                            ВКонтакте
+                            <%- page.l.vk %>
                         </a>
                         <% } %>
                         <% if (page.social.facebook) { %>
@@ -333,19 +333,19 @@
                         <% if (page.social.gplus) { %>
                         <a href="<%- page.social.gplus %>" class="flat_button" style="display: block;margin: 2px
                         auto; background: #DB4437">
-                            Google+
+                            <%- page.l.google %>
                         </a>
                         <% } %>
                         <% if (page.social.youtube) { %>
                         <a href="<%- page.social.youtube %>" class="flat_button" style="display: block;margin: 2px
                         auto; background: #FF0000">
-                            YouTube
+                            <%- page.l.youtube %>
                         </a>
                         <% } %>
                         <% if (page.social.instagram) { %>
                         <a href="<%- page.social.instagram %>" class="flat_button" style="display: block;margin: 2px
                         auto; background: #005CA3">
-                            Instagram
+                            <%- page.l.instagram %>
                         </a>
                         <% } %>
 
