@@ -35,7 +35,7 @@
                                                     <div class="_post_content">
                                                         <div class="post_header">
                                                             <a href="/" class="post_image">
-                                                                <img src="/themes/joffrey/public/images/ava.png" class="post_img" height="50" width="50" alt="Logo">
+                                                                <img src="/themes/joffrey/public/images/ava.png?v=<%- page.ver %>" class="post_img" height="50" width="50" alt="Logo">
                                                                 <span class="blind_label">.</span>
                                                             </a>
                                                             <div class="post_header_info">
@@ -97,13 +97,20 @@
 
                                 <div class="wall_module">
                                     <div class="page_block">
-                                        <h2 class="page_block_h2">
-                                            <span class="ui_tabs clear_fix">
-                                                <span class="ui_tab ui_tab_sel">
+                                        <div class="page_block_h2">
+                                            <div class="ui_tabs clear_fix">
+                                                <h2 class="ui_tab ui_tab_sel">
                                                     <%- category.name %>
-                                                </span>
-                                            </span>
-                                        </h2>
+                                                </h2>
+                                                <div class="randomMovieIndex">
+                                                    <div class="cinemapress-random-index"
+                                                         onclick="window.location.href='<%- category.url %>?random'"
+                                                         title="<%- page.l.random %>">
+                                                        <img src="/themes/joffrey/public/images/dice.svg" alt="<%- page.l.random %>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="wall_posts own">
 

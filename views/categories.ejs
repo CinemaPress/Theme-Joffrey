@@ -36,7 +36,7 @@
                                                     <div class="_post_content">
                                                         <div class="post_header">
                                                             <a href="/" class="post_image">
-                                                                <img src="/themes/joffrey/public/images/ava.png" class="post_img" height="50" width="50" alt="Logo">
+                                                                <img src="/themes/joffrey/public/images/ava.png?v=<%- page.ver %>" class="post_img" height="50" width="50" alt="Logo">
                                                                 <span class="blind_label">.</span>
                                                             </a>
                                                             <div class="post_header_info">
@@ -119,13 +119,10 @@
                                                             <div class="module_body clear_fix" style="text-align: center;">
 
                                                                 <% categories.forEach(function (content) { %>
-                                                                <div style="float: left; width: 50%;">
-                                                                    <div style="margin: 0; padding: 10px">
-                                                                        <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url(<%- content.image %>);">
-                                                                            <div class="cinemapress-news-title">
-                                                                                <%= content.title %>
-                                                                            </div>
-                                                                        </a>
+                                                                <div style="float:left;width:50%;">
+                                                                    <div style="margin:10px;padding:0;position:relative">
+                                                                        <div class="cinemapress-categories" style="background-image:url(<%- content.image %>);"></div>
+                                                                        <a href="<%- content.url %>" class="cinemapress-categories-title"><%= content.title %></a>
                                                                     </div>
                                                                 </div>
                                                                 <% }); %>

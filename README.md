@@ -1,10 +1,10 @@
 # Theme «joffrey»
 
-![Theme «joffrey» for CinemaPress ACMS](https://raw.githubusercontent.com/CinemaPress/Theme-Joffrey/master/screenshot.png "Theme «joffrey» for CinemaPress ACMS")
+![Theme «joffrey» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Joffrey/master/screenshot.png "Theme «joffrey» for CinemaPress")
 
-:art: Theme «joffrey» for CinemaPress ACMS
+:art: Theme «joffrey» for CinemaPress
 
-- [Joffrey.CinemaPress.org](http://Joffrey.CinemaPress.org/)
+- [Joffrey.CinemaPress.io](http://Joffrey.CinemaPress.io/)
 
 ## How to install?
 1. Download [GitHub](https://github.com/CinemaPress/Theme-Joffrey/archive/master.zip) or [GitLab](https://gitlab.com/CinemaPress/Theme-Joffrey/repository/archive.zip) or [BitBucket](https://bitbucket.org/cinemapress/theme-joffrey/get/master.zip) or [Coding](https://coding.net/u/CinemaPress/p/Theme-Joffrey/git/archive/master.zip)
@@ -14,7 +14,7 @@
 
 ## Installation via terminal
 ```
-~# wget cinemapress.org/i -qO i && chmod +x i && ./i 3
+~# bash <(wget -qO- cinemapress.sh)
 ```
 
 ## Как установить?
@@ -25,5 +25,5 @@
 
 ## Установка через терминал
 ```
-~# wget cinemapress.org/i -qO i && chmod +x i && ./i 3
+~# bash <(wget -qO- cinemapress.sh)
 ```

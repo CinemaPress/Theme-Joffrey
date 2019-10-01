@@ -14,6 +14,13 @@
                         <a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>" class="top_nav_link"><%- page.l.anime %></a>
                         <a href="/<%- page.urls.type %>/<%- page.urls.types.tv %>" class="top_nav_link"><%- page.l.tv %></a>
                     </div>
+                    <div class="randomMovieMenu">
+                        <div class="head_nav_item fl_r cinemapress-random-menu">
+                            <a href="/?random" class="top_nav_link" title="<%- page.l.lucky %>">
+                                <img src="/themes/joffrey/public/images/dice.svg" alt="<%- page.l.lucky %>">
+                            </a>
+                        </div>
+                    </div>
                     <div class="head_nav_item fl_r continueViewingBlock" style="display: none;">
                         <a href="javascript:void(0)" class="top_nav_link" id="continueViewing">
                             <%- page.l.continue %>?
@@ -27,8 +34,9 @@
                                 </div>
                             </div>
                             <form method="get" action="/<%- page.urls.search %>">
-                                <input class="text ts_input" autocomplete="off" name="q" type="text" placeholder="<%- page.l.search %>">
+                                <input class="text ts_input" autocomplete="off" name="q" type="text" placeholder="<%- page.l.search %>" data-autocomplete="desktop">
                                 <button style="display: none;" type="submit"></button>
+                                <div class="cinemapress-autocomplete" data-autocomplete="desktop"></div>
                             </form>
                         </div>
                     </div>

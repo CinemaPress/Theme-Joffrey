@@ -35,7 +35,7 @@
                                                     <div class="_post_content">
                                                         <div class="post_header">
                                                             <a href="/" class="post_image">
-                                                                <img src="/themes/joffrey/public/images/ava.png" class="post_img" height="50" width="50" alt="Logo">
+                                                                <img src="/themes/joffrey/public/images/ava.png?v=<%- page.ver %>" class="post_img" height="50" width="50" alt="Logo">
                                                                 <span class="blind_label">.</span>
                                                             </a>
                                                             <div class="post_header_info">
@@ -104,6 +104,15 @@
                                     </div>
                                 </div>
                                 <% } %>
+
+                                <div class="randomMovieCategory">
+                                    <div class="cinemapress-random-category"
+                                         onclick="window.location.href='<%- page.url %>?random'">
+                                        <img src="/themes/joffrey/public/images/dice.svg" alt="<%- page.l.random %>">
+                                        <span><%- page.l.lucky %></span>
+                                        <small><%- page.l.random %></small>
+                                    </div>
+                                </div>
 
                                 <% if (page.seo) { %>
                                 <div class="page_block">

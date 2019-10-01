@@ -36,7 +36,7 @@
                                                     <div class="_post_content">
                                                         <div class="post_header">
                                                             <a href="/" class="post_image">
-                                                                <img src="/themes/joffrey/public/images/ava.png" class="post_img" height="50" width="50" alt="Logo">
+                                                                <img src="/themes/joffrey/public/images/ava.png?v=<%- page.ver %>" class="post_img" height="50" width="50" alt="Logo">
                                                                 <span class="blind_label">.</span>
                                                             </a>
                                                             <div class="post_header_info">
@@ -95,7 +95,7 @@
                                                 <div class="_post_content">
                                                     <div class="post_header">
                                                         <a href="<%- movie.url %>" class="post_image">
-                                                            <img src="/themes/joffrey/public/images/ava.png" class="post_img" height="50" width="50" alt="Logo">
+                                                            <img src="/themes/joffrey/public/images/ava.png?v=<%- page.ver %>" class="post_img" height="50" width="50" alt="Logo">
                                                             <span class="blind_label">.</span>
                                                         </a>
                                                         <div class="post_header_info">
@@ -184,15 +184,15 @@
                                                                         </div>
                                                                         <% } %>
 
-                                                                        <div style="position: relative; height: 370px; margin: 20px auto; border-radius: 10px; background: transparent;overflow: hidden;">
-                                                                            <% if (page.player) { %>
-                                                                            <%- page.player %>
-                                                                            <% } %>
-                                                                        </div>
+                                                                            <div id="cinemapress-player" style="margin: 20px auto; border-radius: 10px;">
+                                                                                <% if (page.player) { %>
+                                                                                    <%- page.player %>
+                                                                                <% } %>
+                                                                            </div>
 
                                                                         <script src="/themes/default/public/desktop/js/yastatic.net/es5-shims.min.js"></script>
                                                                         <script src="/themes/default/public/desktop/js/yastatic.net/share2.js"></script>
-                                                                        <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus,twitter" data-counter="" style="float:left;"></div>
+                                                                        <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,twitter" data-counter="" style="float:left;"></div>
 
                                                                         <div class="flat_button watchLaterBlock" style="float: right; display: none;" id="watchLater"><%- page.l.later %></div>
                                                                         <div style="clear: both"></div>
@@ -246,13 +246,20 @@
                                         movies[type].forEach(function (category) { %>
                                         <div class="wall_module">
                                             <div class="page_block">
-                                                <h2 class="page_block_h2">
-                                                    <span class="ui_tabs clear_fix ">
-                                                        <span class="ui_tab ui_tab_sel">
+                                                <div class="page_block_h2">
+                                                    <div class="ui_tabs clear_fix">
+                                                        <h2 class="ui_tab ui_tab_sel">
                                                             <%- category.name %>
-                                                        </span>
-                                                    </span>
-                                                </h2>
+                                                        </h2>
+                                                        <div class="randomMovieRelated">
+                                                            <div class="cinemapress-random-related"
+                                                                 onclick="window.location.href='<%- category.url %>?random'"
+                                                                 title="<%- page.l.random %>">
+                                                                <img src="/themes/joffrey/public/images/dice.svg" alt="<%- page.l.random %>">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="wall_posts own">
                                                 <div class="_post post page_block all own">
@@ -263,8 +270,9 @@
                                                                     <div class="_wall_post_cont">
                                                                         <div class="page_post_sized_thumbs clear_fix" style="width: 510px;">
                                                                             <% if (category.movies.length) {
-                                                                            category.movies.forEach(function (movie, i) { if (i>7) {return;} %>
-                                                                            <a href="<%- movie.url %>" style="width: 68px; height: 97px; background-image: url(<%- movie.poster %>)" class="page_post_thumb_wrap image_cover fl_l  <% if (i === 6) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else {  %>page_post_thumb_last_row<% } %>" title="<%= movie.title %>"></a>
+                                                                            category.movies.splice(7, category.movies.length % 7);
+                                                                            category.movies.forEach(function (movie, i) { %>
+                                                                            <a href="<%- movie.url %>" style="width: 68px; height: 97px; background-image: url(<%- movie.poster %>)" class="page_post_thumb_wrap image_cover fl_l  <% if (!(i % 6)) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else {  %>page_post_thumb_last_row<% } %>" title="<%= movie.title %>"></a>
                                                                             <% }); } %>
                                                                         </div>
                                                                     </div>
