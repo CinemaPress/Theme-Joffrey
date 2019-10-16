@@ -3,7 +3,7 @@
         <div class="page_block page_photo">
             <div class="page_avatar_wrap">
                 <div id="page_avatar" class="page_avatar">
-                    <img class="page_avatar_img" <% if (typeof movie === 'object') { %>src="<%- movie.poster %>" id="cinemapress-poster"<% } else { %>src="/themes/joffrey/public/images/ava.png"<% } %> alt="<%= page.title %>" title="<%= page.title %>">
+                    <img class="page_avatar_img" <% if (typeof movie === 'object') { %>src="<%- movie.poster %>" data-cinemapress-poster="<%- movie.poster %>"<% } else { %>src="/themes/joffrey/public/images/ava.png"<% } %> alt="<%= page.title %>" title="<%= page.title %>">
                 </div>
             </div>
         </div>
