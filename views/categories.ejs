@@ -36,7 +36,7 @@
                                                     <div class="_post_content">
                                                         <div class="post_header">
                                                             <a href="/" class="post_image">
-                                                                <img src="/themes/joffrey/public/images/ava.png?v=<%- page.ver %>" class="post_img" height="50" width="50" alt="Logo">
+                                                                <img src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" class="post_img" height="50" width="50" alt="Logo">
                                                                 <span class="blind_label">.</span>
                                                             </a>
                                                             <div class="post_header_info">
@@ -61,7 +61,7 @@
 
                                                                             <% slider.forEach(function (movie, i) { if (i > 9) {return;} %>
 
-                                                                            <a href="<%- movie.url %>" style="<% if (i > 2) { %>width: 68px; height: 97px;<% } else { %>width: 166px; height: 237px;<% } %> background-image: url(<%- movie.poster %>)" class="page_post_thumb_wrap image_cover fl_l <% if (i === 2) { %>page_post_thumb_last_column<% } else if (i === 9) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else if (i > 2) {  %>page_post_thumb_last_row<% } %>"></a>
+                                                                            <a href="<%- movie.url %>" style="<% if (i > 2) { %>width: 68px; height: 97px;<% } else { %>width: 166px; height: 237px;<% } %> background-image: url('<%- movie.poster %>')" class="page_post_thumb_wrap image_cover fl_l <% if (i === 2) { %>page_post_thumb_last_column<% } else if (i === 9) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else if (i > 2) {  %>page_post_thumb_last_row<% } %>"></a>
 
                                                                             <% }); %>
 
@@ -121,7 +121,7 @@
                                                                 <% categories.forEach(function (content) { %>
                                                                 <div style="float:left;width:50%;">
                                                                     <div style="margin:10px;padding:0;position:relative">
-                                                                        <div class="cinemapress-categories" style="background-image:url(<%- content.image %>);"></div>
+                                                                        <div class="cinemapress-categories" style="background-image:url('<%- content.image %>');"></div>
                                                                         <a href="<%- content.url %>" class="cinemapress-categories-title"><%= content.title %></a>
                                                                     </div>
                                                                 </div>
