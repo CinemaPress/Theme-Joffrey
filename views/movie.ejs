@@ -288,7 +288,7 @@
                                                                             <% if (category.movies.length) {
                                                                             category.movies.splice(7, category.movies.length % 7);
                                                                             category.movies.forEach(function (movie, i) { %>
-                                                                            <a href="<%- movie.url %>" style="width: 68px; height: 97px; background-image: url('<%- movie.poster %>')" class="page_post_thumb_wrap image_cover fl_l  <% if (!(i % 6)) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else {  %>page_post_thumb_last_row<% } %>" title="<%= movie.title %>"></a>
+                                                                            <a href="<%- movie.url %>" style="width: 68px; height: 97px; background-image: url('<%- movie.poster %>')" class="page_post_thumb_wrap image_cover fl_l  <% if (i === 0) { %>page_post_thumb_first_column page_post_thumb_first_row<% } else if (!(i % 6)) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else {  %>page_post_thumb_last_row<% } %>" title="<%= movie.title %>"></a>
                                                                             <% }); } %>
                                                                         </div>
                                                                     </div>
