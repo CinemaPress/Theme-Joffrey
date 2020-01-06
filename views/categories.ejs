@@ -2,7 +2,7 @@
 <html lang="<%- page.language %>">
 <head>
 
-    <% include includes/head.ejs %>
+    <%- include('includes/head.ejs'); -%>
 
 </head>
 <body>
@@ -10,9 +10,9 @@
     <div class="scroll_fix">
         <div id="page_layout" style="width: 960px;">
 
-            <% include includes/header.ejs %>
+            <%- include('includes/header.ejs'); -%>
 
-            <% include includes/left.ejs %>
+            <%- include('includes/left.ejs'); -%>
 
             <div id="page_body" class="fl_r" style="width: 795px;">
                 <div class="clear_fix no_login">
@@ -29,42 +29,43 @@
 
                                     <% if (typeof slider === 'object' && slider.length) { %>
 
-                                    <div class="wall_fixed">
-                                        <div class="wall_module">
-                                            <div class="wall_posts own">
-                                                <div class="_post post all own post_fixed">
-                                                    <div class="_post_content">
-                                                        <div class="post_header">
-                                                            <a href="/" class="post_image">
-                                                                <img src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" class="post_img" height="50" width="50" alt="Logo">
-                                                                <span class="blind_label">.</span>
-                                                            </a>
-                                                            <div class="post_header_info">
-                                                                <h5 class="post_author">
-                                                                    <a class="author" href="/"><%- page.l.popular %> <%- page.l.movies %></a>
-                                                                    <span class="explain">
+                                        <div class="wall_fixed">
+                                            <div class="wall_module">
+                                                <div class="wall_posts own">
+                                                    <div class="_post post all own post_fixed">
+                                                        <div class="_post_content">
+                                                            <div class="post_header">
+                                                                <a href="/" class="post_image">
+                                                                    <img src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" class="post_img" height="50" width="50" alt="Logo">
+                                                                    <span class="blind_label">.</span>
+                                                                </a>
+                                                                <div class="post_header_info">
+                                                                    <h5 class="post_author">
+                                                                        <a class="author" href="/"><%- page.l.popular %> <%- page.l.movies %></a>
+                                                                        <span class="explain">
                                                                         <span class="wall_fixed_label">&nbsp;</span>
                                                                     </span>
-                                                                </h5>
-                                                                <div class="post_date">
-                                                                    <a class="post_link" href="/">
-                                                                        <span class="rel_date"><%- new Date().toISOString().slice(0, 10) %></span>
-                                                                    </a>
+                                                                    </h5>
+                                                                    <div class="post_date">
+                                                                        <a class="post_link" href="/">
+                                                                            <span class="rel_date"><%- new Date().toISOString().slice(0, 10) %></span>
+                                                                        </a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="post_content">
-                                                            <div class="post_info">
-                                                                <div class="wall_text">
-                                                                    <div class="_wall_post_cont">
-                                                                        <div class="page_post_sized_thumbs  clear_fix" style="width: 510px;">
+                                                            <div class="post_content">
+                                                                <div class="post_info">
+                                                                    <div class="wall_text">
+                                                                        <div class="_wall_post_cont">
+                                                                            <div class="page_post_sized_thumbs  clear_fix" style="width: 510px;">
 
-                                                                            <% slider.forEach(function (movie, i) { if (i > 9) {return;} %>
+                                                                                <% slider.forEach(function (movie, i) { if (i > 9) {return;} %>
 
-                                                                            <a href="<%- movie.url %>" style="<% if (i > 2) { %>width: 68px; height: 97px;<% } else { %>width: 166px; height: 237px;<% } %> background-image: url('<%- movie.poster %>')" class="page_post_thumb_wrap image_cover fl_l <% if (i === 2) { %>page_post_thumb_last_column<% } else if (i === 9) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else if (i > 2) {  %>page_post_thumb_last_row<% } %>"></a>
+                                                                                <a href="<%- movie.url %>" style="<% if (i > 2) { %>width: 68px; height: 97px;<% } else { %>width: 166px; height: 237px;<% } %> background-image: url('<%- movie.poster %>')" class="page_post_thumb_wrap image_cover fl_l <% if (i === 2) { %>page_post_thumb_last_column<% } else if (i === 9) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else if (i > 2) {  %>page_post_thumb_last_row<% } %>"></a>
 
-                                                                            <% }); %>
+                                                                                <% }); %>
 
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -74,59 +75,59 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
                                     <% } %>
 
                                 </div>
 
                                 <% if (typeof page.adv === 'object' && page.adv.top) { %>
-                                <div class="page_block">
-                                    <div style="padding: 20px; text-align: center;">
-                                        <%- page.adv.top %>
+                                    <div class="page_block">
+                                        <div style="padding: 20px; text-align: center;">
+                                            <%- page.adv.top %>
+                                        </div>
                                     </div>
-                                </div>
                                 <% } %>
 
                                 <% if (page.seo) { %>
 
-                                <div class="page_block">
-                                    <div style="padding: 20px; text-align: justify">
-                                        <%- page.seo %>
+                                    <div class="page_block">
+                                        <div style="padding: 20px; text-align: justify">
+                                            <%- page.seo %>
+                                        </div>
                                     </div>
-                                </div>
 
                                 <% } %>
 
                                 <% if (typeof categories === 'object' && categories.length) { %>
 
-                                <div class="page_block">
-                                    <div class="wall_module">
-                                        <div class="page_block">
-                                            <h2 class="page_block_h2">
+                                    <div class="page_block">
+                                        <div class="wall_module">
+                                            <div class="page_block">
+                                                <h2 class="page_block_h2">
                                                 <span class="ui_tabs clear_fix">
                                                     <span class="ui_tab ui_tab_sel">
                                                         <%= page.title %>
                                                     </span>
                                                 </span>
-                                            </h2>
-                                        </div>
-                                        <div class="wall_posts own">
-                                            <div class="_post post page_block all own">
-                                                <div class="_post_content">
-                                                    <div class="post_content">
-                                                        <div class="module clear album_module _module">
-                                                            <div class="module_body clear_fix" style="text-align: center;">
+                                                </h2>
+                                            </div>
+                                            <div class="wall_posts own">
+                                                <div class="_post post page_block all own">
+                                                    <div class="_post_content">
+                                                        <div class="post_content">
+                                                            <div class="module clear album_module _module">
+                                                                <div class="module_body clear_fix" style="text-align: center;">
 
-                                                                <% categories.forEach(function (content) { %>
-                                                                <div style="float:left;width:50%;">
-                                                                    <div style="margin:10px;padding:0;position:relative">
-                                                                        <div class="cinemapress-categories" style="background-image:url('<%- content.image %>');"></div>
-                                                                        <a href="<%- content.url %>" class="cinemapress-categories-title"><%= content.title %></a>
-                                                                    </div>
+                                                                    <% categories.forEach(function (content) { %>
+                                                                        <div style="float:left;width:50%;">
+                                                                            <div style="margin:10px;padding:0;position:relative">
+                                                                                <div class="cinemapress-categories" style="background-image:url('<%- content.image %>');"></div>
+                                                                                <a href="<%- content.url %>" class="cinemapress-categories-title"><%= content.title %></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    <% }); %>
+
                                                                 </div>
-                                                                <% }); %>
-
                                                             </div>
                                                         </div>
                                                     </div>
@@ -134,28 +135,27 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
                                 <% } %>
 
                                 <% if (typeof page.adv === 'object' && page.adv.bottom) { %>
-                                <div class="page_block">
-                                    <div style="padding: 20px; text-align: center;">
-                                        <%- page.adv.bottom %>
+                                    <div class="page_block">
+                                        <div style="padding: 20px; text-align: center;">
+                                            <%- page.adv.bottom %>
+                                        </div>
                                     </div>
-                                </div>
                                 <% } %>
 
                             </div>
                         </div>
 
-                        <% include includes/right.ejs %>
+                        <%- include('includes/right.ejs'); -%>
 
                     </div>
                 </div>
             </div>
 
-            <% include includes/footer.ejs %>
+            <%- include('includes/footer.ejs'); -%>
 
             <div class="clear"></div>
 

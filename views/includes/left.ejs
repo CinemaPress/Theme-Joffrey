@@ -2,47 +2,47 @@
     <div id="side_bar_inner" class="side_bar_inner" style="position: relative; margin-top: 42px;">
         <ol>
             <% page.urls.genres.forEach(function(genre) { %>
-            <li class="genre_app">
-                <a href="<%- genre.url %>" class="left_row">
+                <li class="genre_app">
+                    <a href="<%- genre.url %>" class="left_row">
                     <span class="left_fixer">
                         <span class="left_count_wrap fl_r left_void"><span class="inl_bl left_count_sign"></span></span>
                         <span class="left_icon fl_l"></span>
                         <span class="left_label inl_bl"><%- genre.title %></span>
                     </span>
-                </a>
-            </li>
+                    </a>
+                </li>
             <% }); %>
             <li class="more_div l_main"></li>
             <% page.urls.years.slice(0,10).forEach(function(year) { %>
-            <li class="genre_app">
-                <a href="<%- year.url %>" class="left_row">
+                <li class="genre_app">
+                    <a href="<%- year.url %>" class="left_row">
                     <span class="left_fixer">
                         <span class="left_count_wrap fl_r left_void"><span class="inl_bl left_count_sign"></span></span>
                         <span class="left_icon fl_l"></span>
                         <span class="left_label inl_bl"><%- year.title %></span>
                     </span>
-                </a>
-            </li>
+                    </a>
+                </li>
             <% }); %>
             <li class="more_div"></li>
             <% page.urls.countries.slice(0,10).forEach(function(country) { %>
-            <li class="genre_app">
-                <a href="<%- country.url %>" class="left_row">
+                <li class="genre_app">
+                    <a href="<%- country.url %>" class="left_row">
                     <span class="left_fixer">
                         <span class="left_count_wrap fl_r left_void"><span class="inl_bl left_count_sign"></span></span>
                         <span class="left_icon fl_l"></span>
                         <span class="left_label inl_bl"><%- country.title %></span>
                     </span>
-                </a>
-            </li>
+                    </a>
+                </li>
             <% }); %>
         </ol>
     </div>
 
     <% if (typeof page.adv === 'object' && page.adv.left) { %>
-    <div style="text-align: center; margin: 10px auto; max-width: 150px;">
-        <%- page.adv.left %>
-    </div>
+        <div style="text-align: center; margin: 10px auto; max-width: 150px;">
+            <%- page.adv.left %>
+        </div>
     <% } %>
 
     <div class="recentlyViewedBlock" style="margin: 20px 0 0 0; width: 150px; text-align: center; display: none;">
