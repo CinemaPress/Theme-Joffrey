@@ -92,7 +92,7 @@
 
                                 <% if (typeof index === 'object') {
                                         for (var type in index) {
-                                if (index.hasOwnProperty(type) && index[type].length) {
+                                if (index.hasOwnProperty(type) && index[type].length && type !== 'episode') {
                                 index[type].forEach(function (category) { %>
 
                                     <div class="wall_module">

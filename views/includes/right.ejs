@@ -194,6 +194,48 @@
             </div>
         </div>
 
+        <% if (typeof index === 'object') {
+                for (var type in index) {
+        if (index.hasOwnProperty(type) && index[type].length && type === 'episode') {
+        index[type].forEach(function (category) { %>
+
+            <div class="page_block">
+                <div class="module clear album_module _module" id="public_albums">
+                    <div class="module_header">
+                        <h3 class="header_top clear_fix">
+                            <span class="header_label fl_l"><%- category.name %></span>
+                        </h3>
+                    </div>
+                    <div class="module_body clear_fix">
+
+                        <% var moreEpisodes = false; %>
+                        <% if (category.movies.length) {
+                        category.movies.forEach(function (movie) { %>
+
+                            <div class="clear_fix clear page_album_row" <% if (movie.hide) { moreEpisodes = true; %>style="display:none" data-more-episodes="hide"<% } %>>
+                                <a href="<%- movie.url %>" class="page_album_link">
+                                    <div class="page_album_thumb_wrap">
+                                        <img class="page_album_thumb" src="<%- movie.poster %>" alt="<%= movie.title %>">
+                                    </div>
+                                    <div class="page_album_title">
+                                        <div class="page_album_title_text" title="<%= movie.title %>"><% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% if (movie.translate) { %><br><%- movie.translate %><% } %><% } %></div>
+                                    </div>
+                                </a>
+                                <a class="bg"></a>
+                            </div>
+
+                        <% }); } %>
+
+                        <% if (moreEpisodes) { %>
+                            <div class="moreEpisodes" onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
+                        <% } %>
+
+                    </div>
+                </div>
+            </div>
+
+        <% }); } } } %>
+
         <% if (typeof page.adv === 'object' && page.adv.right) { %>
             <div class="page_block">
                 <div class="module clear page_list_module _module">
