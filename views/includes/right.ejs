@@ -3,7 +3,11 @@
         <div class="page_block page_photo">
             <div class="page_avatar_wrap">
                 <div id="page_avatar" class="page_avatar">
-                    <img class="page_avatar_img" <% if (typeof movie === 'object') { %>src="<%- movie.poster %>" data-cinemapress-poster="<%- movie.poster %>"<% } else { %>src="/themes/<%- page.theme %>/public/images/ava.png"<% } %> alt="<%= page.title %>" title="<%= page.title %>">
+                    <img class="page_avatar_img" <% if (typeof movie === 'object') { %>src="<%- movie.poster %>"
+                         data-cinemapress-poster="<%- movie.poster %>"
+                         <% } else { %>src="/themes/<%- page.theme %>/public/images/ava.png"
+                            <% } %>
+                         alt="<%= page.title %>" title="<%= page.title %>">
                 </div>
             </div>
         </div>
@@ -39,22 +43,26 @@
                                 <%- page.l.information %>
                             </a>
                             <% if (page.urls.movies.online) { %>
-                                <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="flat_button" style="display: block;margin: 2px auto;">
+                                <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="flat_button"
+                                   style="display: block;margin: 2px auto;">
                                     <%- page.l.online %>
                                 </a>
                             <% } %>
                             <% if (page.urls.movies.download) { %>
-                                <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="flat_button" style="display: block;margin: 2px auto;">
+                                <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="flat_button"
+                                   style="display: block;margin: 2px auto;">
                                     <%- page.l.download %>
                                 </a>
                             <% } %>
                             <% if (page.urls.movies.trailer) { %>
-                                <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>" class="flat_button" style="display: block;margin: 2px auto;">
+                                <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>" class="flat_button"
+                                   style="display: block;margin: 2px auto;">
                                     <%- page.l.trailer %>
                                 </a>
                             <% } %>
                             <% if (page.urls.movies.picture) { %>
-                                <a href="<%- movie.url %>/<%- page.urls.movies.picture %>" class="flat_button" style="display: block;margin: 2px auto;">
+                                <a href="<%- movie.url %>/<%- page.urls.movies.picture %>" class="flat_button"
+                                   style="display: block;margin: 2px auto;">
                                     <%- page.l.picture %>
                                 </a>
                             <% } %>
@@ -88,7 +96,8 @@
 
                                 <% } else { %>
 
-                                    <a href="<%- sort.url %>" class="flat_button" style="display: block;margin: 2px auto;">
+                                    <a href="<%- sort.url %>" class="flat_button"
+                                       style="display: block;margin: 2px auto;">
                                         <%- sort.name %>
                                     </a>
 
@@ -143,7 +152,8 @@
                 <div class="module_body clear_fix">
                     <a href="/<%- page.urls.genre %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
+                            <img class="cell_img"
+                                 src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
                         </div>
                         <div class="fl_l info">
                             <%- page.l.allGenres %>
@@ -151,7 +161,8 @@
                     </a>
                     <a href="/<%- page.urls.year %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
+                            <img class="cell_img"
+                                 src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
                         </div>
                         <div class="fl_l info">
                             <%- page.l.allYears %>
@@ -160,7 +171,8 @@
                     <a href="/<%- page.urls.country %>" class="line_cell
                     clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
+                            <img class="cell_img"
+                                 src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
                         </div>
                         <div class="fl_l info">
                             <%- page.l.allCountries %>
@@ -168,7 +180,8 @@
                     </a>
                     <a href="/<%- page.urls.actor %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
+                            <img class="cell_img"
+                                 src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
                         </div>
                         <div class="fl_l info">
                             <%- page.l.allActors %>
@@ -176,7 +189,8 @@
                     </a>
                     <a href="/<%- page.urls.director %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
+                            <img class="cell_img"
+                                 src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
                         </div>
                         <div class="fl_l info">
                             <%- page.l.allDirectors %>
@@ -184,7 +198,8 @@
                     </a>
                     <a href="/<%- page.urls.content %>?tag=<%- page.l.collections %>" class="line_cell clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
+                            <img class="cell_img"
+                                 src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
                         </div>
                         <div class="fl_l info">
                             <%- page.l.collections %>
@@ -212,13 +227,22 @@
                         <% if (category.movies.length) {
                         category.movies.forEach(function (movie) { %>
 
-                            <div class="clear_fix clear page_album_row" <% if (movie.hide) { moreEpisodes = true; %>style="display:none" data-more-episodes="hide"<% } %>>
+                            <div class="clear_fix clear page_album_row"
+                                 <% if (movie.hide) { moreEpisodes = true; %>style="display:none"
+                                 data-more-episodes="hide"
+                                    <% } %>
+                            >
                                 <a href="<%- movie.url %>" class="page_album_link">
                                     <div class="page_album_thumb_wrap">
-                                        <img class="page_album_thumb" src="<%- movie.poster %>" alt="<%= movie.title %>">
+                                        <img class="page_album_thumb" src="<%- movie.poster %>"
+                                             alt="<%= movie.title %>">
                                     </div>
                                     <div class="page_album_title">
-                                        <div class="page_album_title_text" title="<%= movie.title %>"><% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% if (movie.translate) { %><br><%- movie.translate %><% } %><% } %></div>
+                                        <div class="page_album_title_text" title="<%= movie.title %>">
+                                            <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% if (movie.translate) { %>
+                                                <br><%- movie.translate %><% } %>
+                                            <% } %>
+                                        </div>
                                     </div>
                                 </a>
                                 <a class="bg"></a>
@@ -227,7 +251,8 @@
                         <% }); } %>
 
                         <% if (moreEpisodes) { %>
-                            <div class="moreEpisodes" onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
+                            <div class="moreEpisodes"
+                                 onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
                         <% } %>
 
                     </div>
@@ -264,10 +289,12 @@
                             <div class="clear_fix clear page_album_row">
                                 <a href="<%- movie.url %>" class="page_album_link">
                                     <div class="page_album_thumb_wrap">
-                                        <img class="page_album_thumb" src="<%- movie.poster %>" alt="<%= movie.title %>">
+                                        <img class="page_album_thumb" src="<%- movie.poster %>"
+                                             alt="<%= movie.title %>">
                                     </div>
                                     <div class="page_album_title">
-                                        <div class="page_album_title_text" title="<%= movie.title %>"><%= movie.title %></div>
+                                        <div class="page_album_title_text"
+                                             title="<%= movie.title %>"><%= movie.title %></div>
 
                                     </div>
                                 </a>
@@ -286,7 +313,8 @@
             <% news.forEach(function (content) { %>
                 <div style="float: left; width: 100%;">
                     <div style="margin: 0; padding: 10px 0;">
-                        <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url('<%- content.image %>');">
+                        <a href="<%- content.url %>" class="cinemapress-news"
+                           style="background-image:url('<%- content.image %>');">
                             <div class="cinemapress-news-title">
                                 <%= content.title %>
                             </div>
@@ -312,12 +340,16 @@
                                 <div class="cinemapress-comment-user" data-comment-id="<%- comment.id %>">
                                     <div class="cinemapress-comment-user-name">
                                         <%- comment.user %>
-                                    </div><div class="cinemapress-comment-user-said">
+                                    </div>
+                                    <div class="cinemapress-comment-user-said">
                                         <%- page.l.said %>
-                                    </div><div class="cinemapress-comment-user-date">
+                                    </div>
+                                    <div class="cinemapress-comment-user-date">
                                         <%- comment.date %>
-                                    </div><div class="cinemapress-comment-user-link">
-                                        <a href="<%- comment.url %>#c<%- comment.id %>" title="<%= comment.title %>">#</a>
+                                    </div>
+                                    <div class="cinemapress-comment-user-link">
+                                        <a href="<%- comment.url %>#c<%- comment.id %>"
+                                           title="<%= comment.title %>">#</a>
                                     </div>
                                 </div>
                             </div>
@@ -340,12 +372,17 @@
                 <div class="module_body clear_fix">
                     <div class="line_cell clear_fix">
                         <div class="fl_l thumb">
-                            <img class="cell_img" src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
+                            <img class="cell_img"
+                                 src="/themes/<%- page.theme %>/public/images/ava.png?v=<%- page.ver %>" alt="Logo">
                         </div>
                         <div class="fl_l extra_info">
                             <div class="people_name">Email</div>
                             <div class="people_desc"></div>
-                            <div class="people_extra"><span id="mylo">Activate JS</span><script>(function(d,i,l,r){d.getElementById(i).innerHTML=l+'@'+r;})(window.document,'mylo','<%- page.email.split('@')[0] %>','<%- page.email.split('@')[1] %>');</script></div>
+                            <div class="people_extra"><span id="mylo">Activate JS</span>
+                                <script>(function(d, i, l, r) {
+                                    d.getElementById(i).innerHTML = l + '@' + r;
+                                  })(window.document, 'mylo', '<%- page.email.split('@')[0] %>', '<%- page.email.split('@')[1] %>');</script>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -356,7 +393,8 @@
                         <div style="margin: auto; text-align: center;">
 
                             <% if (page.social.vk) { %>
-                                <a href="<%- page.social.vk %>" class="flat_button" style="display: block;margin: 2px auto; background: #507299">
+                                <a href="<%- page.social.vk %>" class="flat_button"
+                                   style="display: block;margin: 2px auto; background: #507299">
                                     <%- page.l.vk %>
                                 </a>
                             <% } %>
