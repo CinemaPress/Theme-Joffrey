@@ -140,12 +140,7 @@
                                                                 <div class="post_header_info">
                                                                     <h5 class="post_author">
                                                                         <a class="author"
-                                                                           href="<%- movie.url %>"><%= movie.title %>
-                                                                            <% if (movie.season && movie.episode) { %>
-                                                                                (<%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %>
-                                                                                )
-                                                                            <% } %>
-                                                                        </a>
+                                                                           href="<%- movie.url %>"><%= movie.title %><% if (movie.season && movie.episode) { %> (<%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %>)<% } %></a>
                                                                     </h5>
                                                                     <% if (movie.premiere) { %>
                                                                         <div class="post_date">
@@ -161,55 +156,32 @@
                                                                             <div class="wall_post_text">
 
                                                                                 <% if (movie.kp_rating) { %>
-                                                                                    <div>
-                                                                                        <%- page.l.rating %> <%- page.l.kp %>
-                                                                                        : <%- movie.kp_rating / 10 %>
-                                                                                        <span style="color: #999">(<%- movie.kp_vote %>)</span>
-                                                                                    </div>
+                                                                                    <div><%- page.l.rating %> <%- page.l.kp %>: <%- movie.kp_rating / 10 %> <span style="color: #999">(<%- movie.kp_vote %>)</span></div>
                                                                                 <% } %>
                                                                                 <% if (movie.imdb_rating) { %>
-                                                                                    <div>
-                                                                                        <%- page.l.rating %> <%- page.l.imdb %>
-                                                                                        : <%- movie.imdb_rating / 10 %>
-                                                                                        <span style="color: #999">(<%- movie.imdb_vote %>)</span>
-                                                                                    </div>
+                                                                                    <div><%- page.l.rating %> <%- page.l.imdb %>: <%- movie.imdb_rating / 10 %> <span style="color: #999">(<%- movie.imdb_vote %>)</span></div>
                                                                                 <% } %>
 
                                                                                 <br>
 
                                                                                 <% if (movie.quality) { %>
-                                                                                    <div>
-                                                                                        <%- page.l.quality %>
-                                                                                        : <%- movie.quality %>
-                                                                                    </div>
+                                                                                    <div><%- page.l.quality %>: <%- movie.quality %></div>
                                                                                 <% } %>
                                                                                 <% if (movie.translate) { %>
-                                                                                    <div>
-                                                                                        <%- page.l.translate %>
-                                                                                        : <%- movie.translate %>
-                                                                                    </div>
+                                                                                    <div><%- page.l.translate %>: <%- movie.translate %></div>
                                                                                     <br>
                                                                                 <% } %>
 
                                                                                 <% if (movie.year) { %>
-                                                                                    <div>
-                                                                                        <%- page.l.year %>
-                                                                                        : <%- movie.year %>
-                                                                                    </div>
+                                                                                    <div><%- page.l.year %>: <%- movie.year %></div>
                                                                                 <% } %>
 
                                                                                 <% if (movie.countries) { %>
-                                                                                    <div>
-                                                                                        <%- page.l.countries %>
-                                                                                        : <%- movie.countries %>
-                                                                                    </div>
+                                                                                    <div><%- page.l.countries %>: <%- movie.countries %></div>
                                                                                 <% } %>
 
                                                                                 <% if (movie.genres) { %>
-                                                                                    <div>
-                                                                                        <%- page.l.genres %>
-                                                                                        : <%- movie.genres %>
-                                                                                    </div>
+                                                                                    <div><%- page.l.genres %>: <%- movie.genres %></div>
                                                                                 <% } %>
 
                                                                                 <br>
