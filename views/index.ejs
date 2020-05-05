@@ -125,7 +125,7 @@
                                         </div>
                                         <div class="wall_posts own">
 
-                                            <% if (category.movies.length) {
+                                            <% if (typeof category === 'object' && category.movies && category.movies.length) {
                                             category.movies.forEach(function (movie) { %>
                                                 <div class="page_block">
                                                     <div class="_post post page_block all own">

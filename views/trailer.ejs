@@ -457,7 +457,7 @@
                                                                         <div class="_wall_post_cont">
                                                                             <div class="page_post_sized_thumbs clear_fix"
                                                                                  style="width: 510px;">
-                                                                                <% if (category.movies.length) {
+                                                                                <% if (typeof category === 'object' && category.movies && category.movies.length) {
                                                                                     category.movies.splice(7, category.movies.length % 7);
                                                                                 category.movies.forEach(function (movie, i) { %>
                                                                                     <a href="<%- movie.url %>"
