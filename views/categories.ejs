@@ -6,6 +6,11 @@
 
 </head>
 <body>
+
+<% if (typeof page.adv === 'object' && page.adv.brand) { %>
+    <%- page.adv.brand %>
+<% } %>
+
 <div class="scroll_fix_wrap _page_wrap">
     <div class="scroll_fix">
         <div id="page_layout" style="width: 960px;">
