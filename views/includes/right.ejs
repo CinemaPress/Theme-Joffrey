@@ -127,7 +127,7 @@
 
                             <a href="<%- movie.url %>" class="line_cell clear_fix">
                                 <div class="fl_l thumb">
-                                    <img class="cell_img" src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>" alt="<%= movie.title %>">
+                                    <img class="lazy cell_img" src="<%- movie.poster_min %>" data-src="<%- movie.poster %>" alt="<%= movie.title %>">
                                 </div>
                                 <div class="fl_l info">
                                     <%= movie.title %>
@@ -234,7 +234,7 @@
                             >
                                 <a href="<%- movie.url %>" class="page_album_link">
                                     <div class="page_album_thumb_wrap">
-                                        <img class="page_album_thumb" src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>"
+                                        <img class="lazy page_album_thumb" src="<%- movie.poster_min %>" data-src="<%- movie.poster %>"
                                              alt="<%= movie.title %>">
                                     </div>
                                     <div class="page_album_title">
@@ -289,7 +289,7 @@
                             <div class="clear_fix clear page_album_row">
                                 <a href="<%- movie.url %>" class="page_album_link">
                                     <div class="page_album_thumb_wrap">
-                                        <img class="page_album_thumb" src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>"
+                                        <img class="lazy page_album_thumb" src="<%- movie.poster_min %>" data-src="<%- movie.poster %>"
                                              alt="<%= movie.title %>">
                                     </div>
                                     <div class="page_album_title">
