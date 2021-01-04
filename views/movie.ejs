@@ -72,11 +72,7 @@
                                                                                 <% slider.forEach(function (movie, i) { if (i > 9) {
                                                                                     return;
                                                                                 } %>
-
-                                                                                <a href="<%- movie.url %>"
-                                                                                   style="<% if (i > 2) { %>width: 68px; height: 97px;<% } else { %>width: 166px; height: 237px;<% } %> background-image: url('<%- movie.poster %>')"
-                                                                                   class="page_post_thumb_wrap image_cover fl_l <% if (i === 2) { %>page_post_thumb_last_column<% } else if (i === 9) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else if (i > 2) { %>page_post_thumb_last_row<% } %>"></a>
-
+                                                                                <a href="<%- movie.url %>" style="<% if (i > 2) { %>width: 68px; height: 97px;<% } else { %>width: 166px; height: 237px;<% } %> background-image: url('<%- movie.poster_min %>')" data-bg="<%- movie.poster %>" class="lazy page_post_thumb_wrap image_cover fl_l <% if (i === 2) { %>page_post_thumb_last_column<% } else if (i === 9) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else if (i > 2) { %>page_post_thumb_last_row<% } %>"></a>
                                                                                 <% }); %>
 
                                                                             </div>
@@ -474,10 +470,7 @@
                                                                                 <% if (typeof category === 'object' && category.movies && category.movies.length) {
                                                                                     category.movies.splice(7, category.movies.length % 7);
                                                                                 category.movies.forEach(function (movie, i) { %>
-                                                                                    <a href="<%- movie.url %>"
-                                                                                       style="width: 68px; height: 97px; background-image: url('<%- movie.poster %>')"
-                                                                                       class="page_post_thumb_wrap image_cover fl_l  <% if (i === 0) { %>page_post_thumb_first_column page_post_thumb_first_row<% } else if (!(i % 6)) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else { %>page_post_thumb_last_row<% } %>"
-                                                                                       title="<%= movie.title %>"></a>
+                                                                                    <a href="<%- movie.url %>" style="width: 68px; height: 97px; background-image: url('<%- movie.poster_min %>')" data-bg="<%- movie.poster %>" class="lazy page_post_thumb_wrap image_cover fl_l  <% if (i === 0) { %>page_post_thumb_first_column page_post_thumb_first_row<% } else if (!(i % 6)) { %>page_post_thumb_last_column page_post_thumb_last_row<% } else { %>page_post_thumb_last_row<% } %>" title="<%= movie.title %>"></a>
                                                                                 <% }); } %>
                                                                             </div>
                                                                         </div>
