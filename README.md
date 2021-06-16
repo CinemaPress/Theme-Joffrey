@@ -1,10 +1,10 @@
 # Theme «joffrey»
 
-![Theme «joffrey» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Joffrey/master/screenshot.png "Theme «joffrey» for CinemaPress")
+![Theme «joffrey» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Joffrey/master/screenshot.png)
 
 :art: Theme «joffrey» for CinemaPress
 
-- [Joffrey.CinemaPress.io](http://Joffrey.CinemaPress.io/)
+- `«joffrey»`
 
 ## How to install?
 1. Download [GitHub](https://github.com/CinemaPress/Theme-Joffrey/archive/master.zip) or [GitLab](https://gitlab.com/CinemaPress/Theme-Joffrey/repository/archive.zip) or [BitBucket](https://bitbucket.org/cinemapress/theme-joffrey/get/master.zip)
